@@ -52,6 +52,11 @@ namespace PROJECT_BUILD
             var loginUser = loginbox.Text;
             var loginPassword = passwordbox.Text;
 
+            if (string.IsNullOrEmpty(loginUser) || string.IsNullOrEmpty(loginPassword))
+            {
+                MessageBox.Show("Пожалуйста, введите логин и пароль");
+                return;
+            }
 
             SqlDataAdapter adapter = new SqlDataAdapter();
             DataTable table = new DataTable();
@@ -71,9 +76,9 @@ namespace PROJECT_BUILD
             }
             else
             {
-                MessageBox.Show("Такого аккаунта не существует,зарегистрируйтесь");
+                MessageBox.Show("Неверный логин или пароль");
             }
-            
         }
+
     }
 }

@@ -38,12 +38,14 @@
             label3 = new Label();
             label2 = new Label();
             Eye_slash = new Button();
+            linkLabel1 = new LinkLabel();
             groupBox3.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox3
             // 
             groupBox3.BackColor = Color.WhiteSmoke;
+            groupBox3.Controls.Add(linkLabel1);
             groupBox3.Controls.Add(Password3);
             groupBox3.Controls.Add(Eye);
             groupBox3.Controls.Add(Password2);
@@ -139,6 +141,19 @@
             Eye_slash.UseVisualStyleBackColor = true;
             Eye_slash.Click += Eye_slash_Click;
             // 
+            // linkLabel1
+            // 
+            linkLabel1.AutoSize = true;
+            linkLabel1.Font = new Font("Segoe UI Historic", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            linkLabel1.LinkColor = Color.FromArgb(128, 128, 255);
+            linkLabel1.Location = new Point(192, 227);
+            linkLabel1.Name = "linkLabel1";
+            linkLabel1.Size = new Size(146, 25);
+            linkLabel1.TabIndex = 10;
+            linkLabel1.TabStop = true;
+            linkLabel1.Text = "К авторизации";
+            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
+            // 
             // Registration
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -163,5 +178,6 @@
         private Label label3;
         private Label label2;
         private Button Eye_slash;
+        private LinkLabel linkLabel1;
     }
 }

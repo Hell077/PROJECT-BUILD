@@ -30,11 +30,9 @@
         {
             label1 = new Label();
             groupBox1 = new GroupBox();
+            button3 = new Button();
             label2 = new Label();
             button6 = new Button();
-            button5 = new Button();
-            button4 = new Button();
-            button3 = new Button();
             button2 = new Button();
             button1 = new Button();
             groupBox1.SuspendLayout();
@@ -52,11 +50,9 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(button3);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(button6);
-            groupBox1.Controls.Add(button5);
-            groupBox1.Controls.Add(button4);
-            groupBox1.Controls.Add(button3);
             groupBox1.Controls.Add(button2);
             groupBox1.Controls.Add(button1);
             groupBox1.ForeColor = SystemColors.ActiveCaptionText;
@@ -65,6 +61,16 @@
             groupBox1.Size = new Size(756, 579);
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
+            // 
+            // button3
+            // 
+            button3.Location = new Point(215, 394);
+            button3.Name = "button3";
+            button3.Size = new Size(300, 69);
+            button3.TabIndex = 7;
+            button3.Text = "Таблица заказов";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // label2
             // 
@@ -84,37 +90,11 @@
             button6.TabIndex = 5;
             button6.Text = "Сделать заказ";
             button6.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            button5.Location = new Point(215, 479);
-            button5.Name = "button5";
-            button5.Size = new Size(300, 69);
-            button5.TabIndex = 4;
-            button5.Text = "Наши отделы";
-            button5.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            button4.Location = new Point(215, 404);
-            button4.Name = "button4";
-            button4.Size = new Size(300, 69);
-            button4.TabIndex = 3;
-            button4.Text = "Таблица поставщиков";
-            button4.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            button3.Location = new Point(215, 329);
-            button3.Name = "button3";
-            button3.Size = new Size(300, 69);
-            button3.TabIndex = 2;
-            button3.Text = "Таблица_зарплат";
-            button3.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
             // 
             // button2
             // 
-            button2.Location = new Point(215, 254);
+            button2.Location = new Point(215, 319);
             button2.Name = "button2";
             button2.Size = new Size(300, 69);
             button2.TabIndex = 1;
@@ -124,7 +104,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(215, 179);
+            button1.Location = new Point(215, 244);
             button1.Name = "button1";
             button1.Size = new Size(300, 69);
             button1.TabIndex = 0;
@@ -154,10 +134,8 @@
         private GroupBox groupBox1;
         private Button button1;
         private Button button6;
-        private Button button5;
-        private Button button4;
-        private Button button3;
         private Button button2;
         private Label label2;
+        private Button button3;
     }
 }

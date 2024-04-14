@@ -21,8 +21,6 @@ namespace PROJECT_BUILD
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
-            MessageBox.Show($"Добро пожаловать, {loginUser}!");
-
             string level = "";
             if (loginUser == "admin")
             {
@@ -57,8 +55,6 @@ namespace PROJECT_BUILD
                 button1.Visible = false;
                 button2.Visible = false;
                 button3.Visible = false;
-                button4.Visible = false;
-                button5.Visible = false;
             }
 
         }
@@ -67,14 +63,28 @@ namespace PROJECT_BUILD
         {
             Stock stock = new Stock();
             stock.ShowDialog();
-           
+
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             employeeForm employee = new employeeForm();
             employee.ShowDialog();
- 
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            OrdersForm ordersForm = new OrdersForm();
+            ordersForm.ShowDialog();
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            OrdersList ordersList = new OrdersList();
+            ordersList.ShowDialog();
+            
         }
     }
 }

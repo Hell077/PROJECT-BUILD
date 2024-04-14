@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Identification));
             authorization_button = new Button();
-            button1 = new Button();
             groupBox1 = new GroupBox();
             label1 = new Label();
             groupBox3 = new GroupBox();
@@ -56,21 +55,10 @@
             authorization_button.UseVisualStyleBackColor = true;
             authorization_button.Click += authorization_button_Click;
             // 
-            // button1
-            // 
-            button1.Location = new Point(6, 32);
-            button1.Name = "button1";
-            button1.Size = new Size(100, 24);
-            button1.TabIndex = 3;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
-            // 
             // groupBox1
             // 
             groupBox1.BackColor = Color.WhiteSmoke;
             groupBox1.Controls.Add(label1);
-            groupBox1.Controls.Add(button1);
             groupBox1.Controls.Add(groupBox3);
             groupBox1.Location = new Point(12, 12);
             groupBox1.Name = "groupBox1";
@@ -200,7 +188,6 @@
 
         #endregion
         private Button authorization_button;
-        private Button button1;
         private GroupBox groupBox1;
         private LinkLabel linkLabel1;
         private Label label2;

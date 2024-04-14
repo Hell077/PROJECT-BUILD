@@ -19,7 +19,7 @@ namespace PROJECT_BUILD
         Database database = new Database();
         public Registration()
         {
-            
+
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
             Password2.PasswordChar = '*';
@@ -49,9 +49,9 @@ namespace PROJECT_BUILD
 
         private void registration_button_Click(object sender, EventArgs e)
         {
-            
 
-            var login = loginbox.Text; 
+
+            var login = loginbox.Text;
             var password2 = Password2.Text;
             var password3 = Password3.Text;
 
@@ -59,15 +59,15 @@ namespace PROJECT_BUILD
             string queryString = $"Insert into register (login_user, password_user) values('{login}', '{password2}')";
 
 
-            SqlCommand command = new SqlCommand(queryString,database.GetConnection());
+            SqlCommand command = new SqlCommand(queryString, database.GetConnection());
 
             database.openConnection();
 
-          
-            
-            if  (command.ExecuteNonQuery() == 1 && 
-                !string.IsNullOrEmpty(login) && 
-                !string.IsNullOrEmpty(password2) && 
+
+
+            if (command.ExecuteNonQuery() == 1 &&
+                !string.IsNullOrEmpty(login) &&
+                !string.IsNullOrEmpty(password2) &&
                 !string.IsNullOrEmpty(password3) &&
                 password2 == password3
                 )
@@ -75,14 +75,14 @@ namespace PROJECT_BUILD
                 MessageBox.Show("Регистрация выполнена успешно");
                 Identification identification = new Identification();
                 identification.Show();
-                Close(); 
+                Close();
             }
             else
             {
                 MessageBox.Show("Регистрация не удалась");
             }
 
-            
+
         }
         private Boolean checkuser()
         {
@@ -97,15 +97,22 @@ namespace PROJECT_BUILD
             adapter.SelectCommand = command;
             adapter.Fill(table);
 
-            if(table.Rows.Count > 0)
+            if (table.Rows.Count > 0)
             {
                 MessageBox.Show("Такой пользователь уже существует!");
                 return true;
             }
-            else 
+            else
             {
-                return false; 
+                return false;
             }
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Identification identification = new Identification();
+            identification.Show(); 
+            Close();
         }
     }
 }
