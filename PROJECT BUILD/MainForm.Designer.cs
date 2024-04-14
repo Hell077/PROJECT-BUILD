@@ -35,6 +35,7 @@
             button6 = new Button();
             button2 = new Button();
             button1 = new Button();
+            button4 = new Button();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -50,6 +51,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(button4);
             groupBox1.Controls.Add(button3);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(button6);
@@ -112,6 +114,16 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // button4
+            // 
+            button4.Location = new Point(215, 469);
+            button4.Name = "button4";
+            button4.Size = new Size(300, 69);
+            button4.TabIndex = 8;
+            button4.Text = "Список логинов/паролей";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -137,5 +149,6 @@
         private Button button2;
         private Label label2;
         private Button button3;
+        private Button button4;
     }
 }

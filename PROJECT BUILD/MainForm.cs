@@ -43,11 +43,13 @@ namespace PROJECT_BUILD
             {
                 label2.Visible = true;
                 button6.Visible = false;
+                button4.Visible = true;
             }
             else if (loginUser == "accountant")
             {
                 button6.Visible = false;
                 button1.Enabled = false;
+                button4.Visible = false;
             }
             else
             {
@@ -55,6 +57,7 @@ namespace PROJECT_BUILD
                 button1.Visible = false;
                 button2.Visible = false;
                 button3.Visible = false;
+                button4.Visible = false;
             }
 
         }
@@ -84,7 +87,13 @@ namespace PROJECT_BUILD
         {
             OrdersList ordersList = new OrdersList();
             ordersList.ShowDialog();
-            
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            LoginListForm loginListForm = new LoginListForm();
+            loginListForm.ShowDialog();
         }
     }
 }
