@@ -18,6 +18,8 @@ namespace PROJECT_BUILD
         public Registration()
         {
             InitializeComponent();
+            this.MaximizeBox = false;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
             StartPosition = FormStartPosition.CenterScreen;
             Password2.PasswordChar = '*';
             Password3.PasswordChar = '*';

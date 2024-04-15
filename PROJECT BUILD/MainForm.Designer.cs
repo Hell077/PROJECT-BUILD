@@ -30,12 +30,13 @@
         {
             label1 = new Label();
             groupBox1 = new GroupBox();
+            button5 = new Button();
+            button4 = new Button();
             button3 = new Button();
             label2 = new Label();
             button6 = new Button();
             button2 = new Button();
             button1 = new Button();
-            button4 = new Button();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -51,6 +52,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(button5);
             groupBox1.Controls.Add(button4);
             groupBox1.Controls.Add(button3);
             groupBox1.Controls.Add(label2);
@@ -64,8 +66,31 @@
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             // 
+            // button5
+            // 
+            button5.Font = new Font("Tahoma", 14.25F);
+            button5.Location = new Point(215, 94);
+            button5.Name = "button5";
+            button5.Size = new Size(300, 69);
+            button5.TabIndex = 9;
+            button5.Text = "Оставить отзыв";
+            button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
+            // 
+            // button4
+            // 
+            button4.Font = new Font("Tahoma", 14.25F);
+            button4.Location = new Point(215, 469);
+            button4.Name = "button4";
+            button4.Size = new Size(300, 69);
+            button4.TabIndex = 8;
+            button4.Text = "Список логинов/паролей";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
+            // 
             // button3
             // 
+            button3.Font = new Font("Tahoma", 14.25F);
             button3.Location = new Point(215, 394);
             button3.Name = "button3";
             button3.Size = new Size(300, 69);
@@ -86,7 +111,8 @@
             // 
             // button6
             // 
-            button6.Location = new Point(215, 22);
+            button6.Font = new Font("Tahoma", 14.25F);
+            button6.Location = new Point(215, 19);
             button6.Name = "button6";
             button6.Size = new Size(300, 69);
             button6.TabIndex = 5;
@@ -96,6 +122,7 @@
             // 
             // button2
             // 
+            button2.Font = new Font("Tahoma", 14.25F);
             button2.Location = new Point(215, 319);
             button2.Name = "button2";
             button2.Size = new Size(300, 69);
@@ -106,6 +133,7 @@
             // 
             // button1
             // 
+            button1.Font = new Font("Tahoma", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
             button1.Location = new Point(215, 244);
             button1.Name = "button1";
             button1.Size = new Size(300, 69);
@@ -113,16 +141,6 @@
             button1.Text = "Склад";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
-            // 
-            // button4
-            // 
-            button4.Location = new Point(215, 469);
-            button4.Name = "button4";
-            button4.Size = new Size(300, 69);
-            button4.TabIndex = 8;
-            button4.Text = "Список логинов/паролей";
-            button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
             // 
             // MainForm
             // 
@@ -150,5 +168,6 @@
         private Label label2;
         private Button button3;
         private Button button4;
+        private Button button5;
     }
 }

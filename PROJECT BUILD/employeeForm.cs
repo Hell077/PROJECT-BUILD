@@ -17,6 +17,8 @@ namespace PROJECT_BUILD
         public employeeForm()
         {
             InitializeComponent();
+            this.MaximizeBox = false;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
             StartPosition = FormStartPosition.CenterScreen;
         }
 

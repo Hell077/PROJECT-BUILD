@@ -20,6 +20,8 @@ namespace PROJECT_BUILD
         public MainForm(string loginUser)
         {
             InitializeComponent();
+            this.MaximizeBox = false;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
             StartPosition = FormStartPosition.CenterScreen;
             string level = "";
             if (loginUser == "admin")
@@ -43,6 +45,7 @@ namespace PROJECT_BUILD
             {
                 label2.Visible = true;
                 button6.Visible = false;
+                button5.Visible = false;
                 button4.Visible = true;
             }
             else if (loginUser == "accountant")
@@ -94,6 +97,12 @@ namespace PROJECT_BUILD
         {
             LoginListForm loginListForm = new LoginListForm();
             loginListForm.ShowDialog();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Rewiew rewiew = new Rewiew();   
+            rewiew.ShowDialog();
         }
     }
 }

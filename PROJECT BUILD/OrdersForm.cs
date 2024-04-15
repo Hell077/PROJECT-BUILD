@@ -12,6 +12,8 @@ namespace PROJECT_BUILD
         public OrdersForm()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             StartPosition = FormStartPosition.CenterScreen;
         }
 

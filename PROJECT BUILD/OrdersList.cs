@@ -18,6 +18,8 @@ namespace PROJECT_BUILD
         {
 
             InitializeComponent();
+            this.MaximizeBox = false;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
             StartPosition = FormStartPosition.CenterScreen;
         }
 

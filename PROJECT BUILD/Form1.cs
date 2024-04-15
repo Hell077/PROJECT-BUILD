@@ -13,6 +13,8 @@ namespace PROJECT_BUILD
         public Identification()
         {
             InitializeComponent();
+            this.MaximizeBox = false;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
             StartPosition = FormStartPosition.CenterScreen;
             passwordbox.PasswordChar = '*';
             passwordbox.MaxLength = 50;
