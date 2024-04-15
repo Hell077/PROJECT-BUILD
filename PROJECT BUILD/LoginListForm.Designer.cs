@@ -30,6 +30,7 @@
         {
             dataGridView1 = new DataGridView();
             label1 = new Label();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -41,7 +42,7 @@
             dataGridView1.Location = new Point(12, 39);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
-            dataGridView1.Size = new Size(617, 561);
+            dataGridView1.Size = new Size(512, 561);
             dataGridView1.TabIndex = 0;
             // 
             // label1
@@ -54,11 +55,23 @@
             label1.TabIndex = 1;
             label1.Text = "Логины пользователей";
             // 
+            // button1
+            // 
+            button1.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            button1.Location = new Point(530, 249);
+            button1.Name = "button1";
+            button1.Size = new Size(99, 58);
+            button1.TabIndex = 2;
+            button1.Text = "Удалить пользователя из базы";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // LoginListForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(641, 612);
+            Controls.Add(button1);
             Controls.Add(label1);
             Controls.Add(dataGridView1);
             Name = "LoginListForm";
@@ -73,5 +86,6 @@
 
         private DataGridView dataGridView1;
         private Label label1;
+        private Button button1;
     }
 }

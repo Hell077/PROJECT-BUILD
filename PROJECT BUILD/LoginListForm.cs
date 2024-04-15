@@ -30,7 +30,6 @@ namespace PROJECT_BUILD
             dataGridView1.Columns.Add("id", "ID");
             dataGridView1.Columns.Add("name", "Логин");
             dataGridView1.Columns.Add("password", "Пароль");
-            
         }
 
         private void ReadSinglRows(DataGridView dgw, IDataRecord record)
@@ -55,5 +54,45 @@ namespace PROJECT_BUILD
             }
             reader.Close();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                int selectedIndex = dataGridView1.SelectedRows[0].Index;
+                int idToDelete = Convert.ToInt32(dataGridView1.Rows[selectedIndex].Cells["id"].Value);
+                DeleteRecordFromDatabase(idToDelete);
+                dataGridView1.Rows.RemoveAt(selectedIndex);
+
+                MessageBox.Show("Запись удалена из базы данных и из DataGridView.");
+            }
+            else
+            {
+                MessageBox.Show("Выберите строку для удаления.");
+            }
+        }
+
+        private void DeleteRecordFromDatabase(int id)
+        {
+            Database database = new Database();
+            SqlConnection connection = database.GetConnection();
+            try
+            {
+                database.openConnection();
+                SqlCommand command = new SqlCommand("DELETE FROM dbo.register WHERE id_user = @Id", connection);
+                command.Parameters.AddWithValue("@Id", id);
+                command.ExecuteNonQuery();
+                MessageBox.Show("Запись удалена из базы данных.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка при удалении записи из базы данных: " + ex.Message);
+            }
+            finally
+            {
+                database.closedConnection();
+            }
+        }
+
     }
 }

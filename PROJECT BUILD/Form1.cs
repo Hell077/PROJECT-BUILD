@@ -52,6 +52,7 @@ namespace PROJECT_BUILD
             var loginUser = loginbox.Text;
             var loginPassword = passwordbox.Text;
 
+
             if (string.IsNullOrEmpty(loginUser) || string.IsNullOrEmpty(loginPassword))
             {
                 MessageBox.Show("Пожалуйста, введите логин и пароль");
@@ -79,6 +80,5 @@ namespace PROJECT_BUILD
                 MessageBox.Show("Неверный логин или пароль");
             }
         }
-
     }
 }
