@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(employeeForm));
             label1 = new Label();
             dataGridView1 = new DataGridView();
             textBox1 = new TextBox();
@@ -39,6 +40,10 @@
             label4 = new Label();
             label5 = new Label();
             button1 = new Button();
+            DeleteButton = new Button();
+            AddNewButton = new Button();
+            RefreshDB = new Button();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -56,6 +61,7 @@
             // 
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.BackgroundColor = Color.Linen;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(12, 51);
             dataGridView1.Name = "dataGridView1";
@@ -136,7 +142,7 @@
             // button1
             // 
             button1.Font = new Font("Tahoma", 12F, FontStyle.Bold);
-            button1.Location = new Point(436, 699);
+            button1.Location = new Point(436, 690);
             button1.Name = "button1";
             button1.Size = new Size(129, 30);
             button1.TabIndex = 12;
@@ -144,12 +150,61 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // DeleteButton
+            // 
+            DeleteButton.Font = new Font("Tahoma", 12F, FontStyle.Bold);
+            DeleteButton.Location = new Point(436, 654);
+            DeleteButton.Name = "DeleteButton";
+            DeleteButton.Size = new Size(129, 30);
+            DeleteButton.TabIndex = 13;
+            DeleteButton.Text = "Удалить";
+            DeleteButton.UseVisualStyleBackColor = true;
+            DeleteButton.Click += DeleteButton_Click;
+            // 
+            // AddNewButton
+            // 
+            AddNewButton.Font = new Font("Tahoma", 12F, FontStyle.Bold);
+            AddNewButton.Location = new Point(436, 618);
+            AddNewButton.Name = "AddNewButton";
+            AddNewButton.Size = new Size(129, 30);
+            AddNewButton.TabIndex = 14;
+            AddNewButton.Text = "Добавить";
+            AddNewButton.UseVisualStyleBackColor = true;
+            AddNewButton.Click += AddNewButton_Click;
+            // 
+            // RefreshDB
+            // 
+            RefreshDB.BackColor = Color.Transparent;
+            RefreshDB.BackgroundImage = (Image)resources.GetObject("RefreshDB.BackgroundImage");
+            RefreshDB.BackgroundImageLayout = ImageLayout.Stretch;
+            RefreshDB.Location = new Point(597, 626);
+            RefreshDB.Name = "RefreshDB";
+            RefreshDB.Size = new Size(103, 103);
+            RefreshDB.TabIndex = 15;
+            RefreshDB.UseVisualStyleBackColor = false;
+            RefreshDB.Click += RefreshDB_Click;
+            // 
+            // button2
+            // 
+            button2.Font = new Font("Tahoma", 12F, FontStyle.Bold);
+            button2.Location = new Point(436, 726);
+            button2.Name = "button2";
+            button2.Size = new Size(129, 30);
+            button2.TabIndex = 16;
+            button2.Text = "Отчистить";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
             // employeeForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
             ClientSize = new Size(992, 762);
+            Controls.Add(button2);
+            Controls.Add(RefreshDB);
+            Controls.Add(AddNewButton);
+            Controls.Add(DeleteButton);
             Controls.Add(button1);
             Controls.Add(label5);
             Controls.Add(label4);
@@ -182,5 +237,9 @@
         private Label label4;
         private Label label5;
         private Button button1;
+        private Button DeleteButton;
+        private Button AddNewButton;
+        private Button RefreshDB;
+        private Button button2;
     }
 }

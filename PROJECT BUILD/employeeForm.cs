@@ -9,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using System.Xml.Linq;
 
 namespace PROJECT_BUILD
 {
@@ -25,10 +27,10 @@ namespace PROJECT_BUILD
         }
         private void textBox4_KeyPress_1(object sender, KeyPressEventArgs e)
         {
-            if ( e.KeyChar == '.')
+            if (e.KeyChar == '.')
             {
 
-              //  e.Handled = true;
+                //  e.Handled = true;
             }
         }
 
@@ -167,6 +169,101 @@ namespace PROJECT_BUILD
 
 
 
+
+
+        private void AddNewButton_Click(object sender, EventArgs e)
+        {
+            string FirstName = textBox1.Text;
+            string LastName = textBox2.Text;
+            string job_title = textBox3.Text;
+            string Salary = textBox4.Text;
+
+
+            string queryString = $"INSERT INTO Сотрудники (Имя, Фамилия, Должность, Зарплата) VALUES ('{FirstName}', '{LastName}', '{job_title}','{Salary}') ";
+
+            using (SqlCommand command = new SqlCommand(queryString, database.GetConnection()))
+            {
+                try
+                {
+                    database.openConnection();
+                    int rowsAffected = command.ExecuteNonQuery();
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Сотрудник успешно добавлен.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ошибка при добавлении сотрудника.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ошибка: " + ex.Message);
+                }
+                finally
+                {
+                    database.closedConnection();
+                }
+            }
+        }
+
+
+
+
+
+
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                int selectedIndex = dataGridView1.SelectedRows[0].Index;
+                int idToDelete = Convert.ToInt32(dataGridView1.Rows[selectedIndex].Cells["id"].Value);
+                DeleteRecordFromDatabase(idToDelete);
+                dataGridView1.Rows.RemoveAt(selectedIndex);
+
+                MessageBox.Show("Запись удалена из базы данных и из DataGridView.");
+            }
+            else
+            {
+                MessageBox.Show("Выберите строку для удаления.");
+            }
+        }
+
+
+        private void DeleteRecordFromDatabase(int id)
+        {
+            Database database = new Database();
+            SqlConnection connection = database.GetConnection();
+            try
+            {
+                database.openConnection();
+                SqlCommand command = new SqlCommand("DELETE FROM Сотрудники WHERE Id = @Id", connection);
+                command.Parameters.AddWithValue("@Id", id);
+                command.ExecuteNonQuery();
+                MessageBox.Show("Запись удалена из базы данных.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка при удалении записи из базы данных: " + ex.Message);
+            }
+            finally
+            {
+                database.closedConnection();
+            }
+        }
+
+        private void RefreshDB_Click(object sender, EventArgs e)
+        {
+            UpdateDataGridView(dataGridView1);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
+            textBox2.Text = "";
+            textBox3.Text = "";
+            textBox4.Text = "";
+        }
     }
 
 }
