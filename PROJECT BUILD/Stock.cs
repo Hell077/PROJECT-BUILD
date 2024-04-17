@@ -27,6 +27,10 @@ namespace PROJECT_BUILD
         {
             CreateColumns();
             UpdateDataGridView(dataGridView1);
+            dataGridView1.Dock = DockStyle.None; // Занимает всё доступное пространство
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill; // Адаптивное заполнение по горизонтали
+            dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None; // Оставить высоту строк фиксированной
+
         }
 
         private void CreateColumns()
@@ -46,8 +50,8 @@ namespace PROJECT_BUILD
                 record.GetString(1),
                 record.GetString(2),
                 Convert.ToInt32(record[3]).ToString(),
-                Convert.ToInt32(record[4]).ToString(),
-                RowState.ModifiedNew
+                record.GetDecimal(4)
+                
             );
         }
 

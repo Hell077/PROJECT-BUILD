@@ -31,10 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(employeeForm));
             label1 = new Label();
             dataGridView1 = new DataGridView();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
+            NameBox = new TextBox();
+            LastNameBox = new TextBox();
+            JobTitleBox = new TextBox();
+            SalaryBox = new TextBox();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
@@ -46,8 +46,10 @@
             button2 = new Button();
             label6 = new Label();
             label7 = new Label();
-            maskedTextBox1 = new MaskedTextBox();
-            maskedTextBox2 = new MaskedTextBox();
+            PhoneNumber = new MaskedTextBox();
+            IINBox = new MaskedTextBox();
+            label8 = new Label();
+            emailBox = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -74,33 +76,33 @@
             dataGridView1.TabIndex = 3;
             dataGridView1.SelectionChanged += dataGridView1_SelectionChanged_1;
             // 
-            // textBox1
+            // NameBox
             // 
-            textBox1.Location = new Point(254, 619);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(155, 23);
-            textBox1.TabIndex = 4;
+            NameBox.Location = new Point(254, 619);
+            NameBox.Name = "NameBox";
+            NameBox.Size = new Size(155, 23);
+            NameBox.TabIndex = 4;
             // 
-            // textBox2
+            // LastNameBox
             // 
-            textBox2.Location = new Point(254, 648);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(155, 23);
-            textBox2.TabIndex = 5;
+            LastNameBox.Location = new Point(254, 648);
+            LastNameBox.Name = "LastNameBox";
+            LastNameBox.Size = new Size(155, 23);
+            LastNameBox.TabIndex = 5;
             // 
-            // textBox3
+            // JobTitleBox
             // 
-            textBox3.Location = new Point(254, 677);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(155, 23);
-            textBox3.TabIndex = 6;
+            JobTitleBox.Location = new Point(254, 677);
+            JobTitleBox.Name = "JobTitleBox";
+            JobTitleBox.Size = new Size(155, 23);
+            JobTitleBox.TabIndex = 6;
             // 
-            // textBox4
+            // SalaryBox
             // 
-            textBox4.Location = new Point(254, 706);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(155, 23);
-            textBox4.TabIndex = 7;
+            SalaryBox.Location = new Point(254, 706);
+            SalaryBox.Name = "SalaryBox";
+            SalaryBox.Size = new Size(155, 23);
+            SalaryBox.TabIndex = 7;
             // 
             // label2
             // 
@@ -180,7 +182,8 @@
             RefreshDB.BackColor = Color.Transparent;
             RefreshDB.BackgroundImage = (Image)resources.GetObject("RefreshDB.BackgroundImage");
             RefreshDB.BackgroundImageLayout = ImageLayout.Stretch;
-            RefreshDB.Location = new Point(597, 626);
+            RefreshDB.FlatAppearance.BorderSize = 0;
+            RefreshDB.Location = new Point(617, 622);
             RefreshDB.Name = "RefreshDB";
             RefreshDB.Size = new Size(103, 103);
             RefreshDB.TabIndex = 15;
@@ -218,21 +221,38 @@
             label7.TabIndex = 20;
             label7.Text = "Иин";
             // 
-            // maskedTextBox1
+            // PhoneNumber
             // 
-            maskedTextBox1.Location = new Point(254, 735);
-            maskedTextBox1.Mask = "+7(999) 000-0000";
-            maskedTextBox1.Name = "maskedTextBox1";
-            maskedTextBox1.Size = new Size(155, 23);
-            maskedTextBox1.TabIndex = 21;
+            PhoneNumber.Location = new Point(254, 735);
+            PhoneNumber.Mask = "+7(999) 000-0000";
+            PhoneNumber.Name = "PhoneNumber";
+            PhoneNumber.Size = new Size(155, 23);
+            PhoneNumber.TabIndex = 21;
             // 
-            // maskedTextBox2
+            // IINBox
             // 
-            maskedTextBox2.Location = new Point(254, 764);
-            maskedTextBox2.Mask = "00000000000";
-            maskedTextBox2.Name = "maskedTextBox2";
-            maskedTextBox2.Size = new Size(155, 23);
-            maskedTextBox2.TabIndex = 23;
+            IINBox.Location = new Point(254, 764);
+            IINBox.Mask = "00000000000";
+            IINBox.Name = "IINBox";
+            IINBox.Size = new Size(155, 23);
+            IINBox.TabIndex = 23;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Tahoma", 12F);
+            label8.Location = new Point(194, 796);
+            label8.Name = "label8";
+            label8.Size = new Size(54, 19);
+            label8.TabIndex = 24;
+            label8.Text = "Почта";
+            // 
+            // emailBox
+            // 
+            emailBox.Location = new Point(254, 796);
+            emailBox.Name = "emailBox";
+            emailBox.Size = new Size(155, 23);
+            emailBox.TabIndex = 25;
             // 
             // employeeForm
             // 
@@ -240,8 +260,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
             ClientSize = new Size(992, 859);
-            Controls.Add(maskedTextBox2);
-            Controls.Add(maskedTextBox1);
+            Controls.Add(emailBox);
+            Controls.Add(label8);
+            Controls.Add(IINBox);
+            Controls.Add(PhoneNumber);
             Controls.Add(label7);
             Controls.Add(label6);
             Controls.Add(button2);
@@ -253,10 +275,10 @@
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(SalaryBox);
+            Controls.Add(JobTitleBox);
+            Controls.Add(LastNameBox);
+            Controls.Add(NameBox);
             Controls.Add(dataGridView1);
             Controls.Add(label1);
             Name = "employeeForm";
@@ -271,10 +293,10 @@
 
         private Label label1;
         private DataGridView dataGridView1;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
+        private TextBox NameBox;
+        private TextBox LastNameBox;
+        private TextBox JobTitleBox;
+        private TextBox SalaryBox;
         private Label label2;
         private Label label3;
         private Label label4;
@@ -286,7 +308,9 @@
         private Button button2;
         private Label label6;
         private Label label7;
-        private MaskedTextBox maskedTextBox1;
-        private MaskedTextBox maskedTextBox2;
+        private MaskedTextBox PhoneNumber;
+        private MaskedTextBox IINBox;
+        private Label label8;
+        private TextBox emailBox;
     }
 }
