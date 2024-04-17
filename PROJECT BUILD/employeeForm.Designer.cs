@@ -44,6 +44,10 @@
             AddNewButton = new Button();
             RefreshDB = new Button();
             button2 = new Button();
+            label6 = new Label();
+            label7 = new Label();
+            maskedTextBox1 = new MaskedTextBox();
+            maskedTextBox2 = new MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -97,7 +101,6 @@
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(155, 23);
             textBox4.TabIndex = 7;
-            textBox4.KeyPress += textBox4_KeyPress_1;
             // 
             // label2
             // 
@@ -195,12 +198,52 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Tahoma", 12F);
+            label6.Location = new Point(171, 739);
+            label6.Name = "label6";
+            label6.Size = new Size(74, 19);
+            label6.TabIndex = 19;
+            label6.Text = "Телефон";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Tahoma", 12F);
+            label7.Location = new Point(207, 768);
+            label7.Name = "label7";
+            label7.Size = new Size(38, 19);
+            label7.TabIndex = 20;
+            label7.Text = "Иин";
+            // 
+            // maskedTextBox1
+            // 
+            maskedTextBox1.Location = new Point(254, 735);
+            maskedTextBox1.Mask = "+7(999) 000-0000";
+            maskedTextBox1.Name = "maskedTextBox1";
+            maskedTextBox1.Size = new Size(155, 23);
+            maskedTextBox1.TabIndex = 21;
+            // 
+            // maskedTextBox2
+            // 
+            maskedTextBox2.Location = new Point(254, 764);
+            maskedTextBox2.Mask = "00000000000";
+            maskedTextBox2.Name = "maskedTextBox2";
+            maskedTextBox2.Size = new Size(155, 23);
+            maskedTextBox2.TabIndex = 23;
+            // 
             // employeeForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
-            ClientSize = new Size(992, 762);
+            ClientSize = new Size(992, 859);
+            Controls.Add(maskedTextBox2);
+            Controls.Add(maskedTextBox1);
+            Controls.Add(label7);
+            Controls.Add(label6);
             Controls.Add(button2);
             Controls.Add(RefreshDB);
             Controls.Add(AddNewButton);
@@ -241,5 +284,9 @@
         private Button AddNewButton;
         private Button RefreshDB;
         private Button button2;
+        private Label label6;
+        private Label label7;
+        private MaskedTextBox maskedTextBox1;
+        private MaskedTextBox maskedTextBox2;
     }
 }

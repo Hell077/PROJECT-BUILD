@@ -17,20 +17,29 @@ namespace PROJECT_BUILD
     public partial class employeeForm : Form
     {
         Database database = new Database();
-
         public employeeForm()
         {
             InitializeComponent();
             this.MaximizeBox = false;
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             StartPosition = FormStartPosition.CenterScreen;
+
         }
-        private void textBox4_KeyPress_1(object sender, KeyPressEventArgs e)
+
+        private void textBox5_KeyPress1(object sender, KeyPressEventArgs e)
+        {
+            if (textBox1.Text.Length >= 12 && e.KeyChar != (char)Keys.Back)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox5_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == '.')
             {
 
-                //  e.Handled = true;
+                e.Handled = true;
             }
         }
 
@@ -47,20 +56,25 @@ namespace PROJECT_BUILD
             dataGridView1.Columns.Add("second_name", "Фамилия");
             dataGridView1.Columns.Add("job_title", "Должность");
             dataGridView1.Columns.Add("Salary", "Зарплата");
+            dataGridView1.Columns.Add("Phone_number", "Телефон");
+            dataGridView1.Columns.Add("IIN", "ИИН");
             dataGridView1.Columns.Add("IsNew", String.Empty);
         }
 
 
-        private void ReadSinglRows(DataGridView dgw, IDataRecord record)
+        private void ReadSingleRows(DataGridView dgw, IDataRecord record)
         {
             dgw.Rows.Add(
                 record.GetInt32(0),
-                record.GetString(1),
-                record.GetString(2),
-                record.GetString(3),
-                record.GetDecimal(4)
+                record.IsDBNull(1) ? string.Empty : record.GetString(1),
+                record.IsDBNull(2) ? string.Empty : record.GetString(2),
+                record.IsDBNull(3) ? string.Empty : record.GetString(3),
+                record.IsDBNull(4) ? 0 : record.GetDecimal(4),
+                record.IsDBNull(5) ? string.Empty : record.GetString(5),
+                record.IsDBNull(6) ? string.Empty : record.GetString(6)
             );
         }
+
 
 
 
@@ -73,7 +87,7 @@ namespace PROJECT_BUILD
             SqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
-                ReadSinglRows(dgw, reader);
+                ReadSingleRows(dgw, reader);
             }
             reader.Close();
         }
@@ -86,18 +100,22 @@ namespace PROJECT_BUILD
                 textBox2.Text = null;
                 textBox3.Text = null;
                 textBox4.Text = null;
-
+                maskedTextBox1.Text = null;
+                textBox5.Text = null;
 
                 DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
-
                 string field1Value = selectedRow.Cells[1].Value.ToString();
                 string field2Value = selectedRow.Cells[2].Value.ToString();
                 string field3Value = selectedRow.Cells[3].Value.ToString();
                 string field4Value = selectedRow.Cells[4].Value.ToString();
+                string field5Value = selectedRow.Cells[5].Value.ToString();
+                string field6Value = selectedRow.Cells[6].Value.ToString();
                 textBox1.Text = field1Value;
                 textBox2.Text = field2Value;
                 textBox3.Text = field3Value;
                 textBox4.Text = field4Value;
+                maskedTextBox1.Text = field5Value;
+                textBox5.Text = field6Value;
             }
         }
 
@@ -109,7 +127,10 @@ namespace PROJECT_BUILD
             string newFieldValue1 = textBox1.Text;
             string newFieldValue2 = textBox2.Text;
             string newFieldValue3 = textBox3.Text;
+
             decimal newFieldValue4;
+            string newFieldValue5 = maskedTextBox1.Text;
+            string newFieldValue6 = maskedTextBox2.Text;
 
             if (decimal.TryParse(textBox4.Text, out newFieldValue4))
             {
@@ -120,10 +141,12 @@ namespace PROJECT_BUILD
                     selectedRow.Cells[2].Value = newFieldValue2;
                     selectedRow.Cells[3].Value = newFieldValue3;
                     selectedRow.Cells[4].Value = newFieldValue4;
+                    selectedRow.Cells[5].Value = newFieldValue5;
+                    selectedRow.Cells[6].Value = newFieldValue6;
 
                     string id = selectedRow.Cells[0].Value.ToString();
 
-                    if (UpdateDataInDatabase(id, newFieldValue1, newFieldValue2, newFieldValue3, newFieldValue4))
+                    if (UpdateDataInDatabase(id, newFieldValue1, newFieldValue2, newFieldValue3, newFieldValue4, newFieldValue5, newFieldValue6))
                     {
                         MessageBox.Show("Данные успешно обновлены.");
                     }
@@ -140,17 +163,19 @@ namespace PROJECT_BUILD
         }
 
 
-        private bool UpdateDataInDatabase(string id, string newValue1, string newValue2, string newValue3, decimal newValue4)
+        private bool UpdateDataInDatabase(string id, string newValue1, string newValue2, string newValue3, decimal newValue4, string newValue5, string newValue6)
         {
             try
             {
-                string updateQuery = "UPDATE Сотрудники SET Имя = @newValue1, Фамилия = @newValue2, Должность = @newValue3, Зарплата = @newValue4 WHERE ID = @id";
+                string updateQuery = "UPDATE Сотрудники SET Имя = @newValue1, Фамилия = @newValue2, Должность = @newValue3, Зарплата = @newValue4, Телефон = @newValue5,ИИН = @newValue6 WHERE ID_сотрудника = @id";
                 using (SqlCommand command = new SqlCommand(updateQuery, database.GetConnection()))
                 {
                     command.Parameters.AddWithValue("@newValue1", newValue1);
                     command.Parameters.AddWithValue("@newValue2", newValue2);
                     command.Parameters.AddWithValue("@newValue3", newValue3);
                     command.Parameters.AddWithValue("@newValue4", newValue4);
+                    command.Parameters.AddWithValue("@newValue5", newValue5);
+                    command.Parameters.AddWithValue("@newValue6", newValue6);
                     command.Parameters.AddWithValue("@id", id);
 
                     database.openConnection();
@@ -177,9 +202,11 @@ namespace PROJECT_BUILD
             string LastName = textBox2.Text;
             string job_title = textBox3.Text;
             string Salary = textBox4.Text;
+            string Number = maskedTextBox1.Text;
+            string IIN = maskedTextBox2.Text;
 
 
-            string queryString = $"INSERT INTO Сотрудники (Имя, Фамилия, Должность, Зарплата) VALUES ('{FirstName}', '{LastName}', '{job_title}','{Salary}') ";
+            string queryString = $"INSERT INTO Сотрудники (Имя, Фамилия, Должность, Зарплата, Телефон, Иин) VALUES ('{FirstName}', '{LastName}', '{job_title}','{Salary}' , '{Number}', '{IIN}') ";
 
             using (SqlCommand command = new SqlCommand(queryString, database.GetConnection()))
             {
@@ -237,7 +264,7 @@ namespace PROJECT_BUILD
             try
             {
                 database.openConnection();
-                SqlCommand command = new SqlCommand("DELETE FROM Сотрудники WHERE Id = @Id", connection);
+                SqlCommand command = new SqlCommand("DELETE FROM Сотрудники WHERE Id_сотрудника = @Id", connection);
                 command.Parameters.AddWithValue("@Id", id);
                 command.ExecuteNonQuery();
                 MessageBox.Show("Запись удалена из базы данных.");
@@ -263,6 +290,8 @@ namespace PROJECT_BUILD
             textBox2.Text = "";
             textBox3.Text = "";
             textBox4.Text = "";
+            maskedTextBox1.Text = "";
+            maskedTextBox2.Text = "";
         }
     }
 
