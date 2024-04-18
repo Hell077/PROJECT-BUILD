@@ -104,6 +104,7 @@ namespace PROJECT_BUILD
                 SalaryBox.Text = null;
                 PhoneNumber.Text = null;
                 IINBox.Text = null;
+                emailBox.Text= null;
 
                 DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
                 string field1Value = selectedRow.Cells[1].Value.ToString();
@@ -112,12 +113,14 @@ namespace PROJECT_BUILD
                 string field4Value = selectedRow.Cells[4].Value.ToString();
                 string field5Value = selectedRow.Cells[5].Value.ToString();
                 string field6Value = selectedRow.Cells[6].Value.ToString();
+                string field7Value = selectedRow.Cells[7].Value.ToString();
                 NameBox.Text = field1Value;
                 LastNameBox.Text = field2Value;
                 JobTitleBox.Text = field3Value;
                 SalaryBox.Text = field4Value;
                 PhoneNumber.Text = field5Value;
                 IINBox.Text = field6Value;
+                emailBox.Text = field7Value;
             }
         }
 

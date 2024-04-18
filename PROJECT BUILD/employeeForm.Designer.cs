@@ -39,11 +39,11 @@
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
-            button1 = new Button();
+            RefreshButton = new Button();
             DeleteButton = new Button();
             AddNewButton = new Button();
             RefreshDB = new Button();
-            button2 = new Button();
+            ClearButton = new Button();
             label6 = new Label();
             label7 = new Label();
             PhoneNumber = new MaskedTextBox();
@@ -144,16 +144,16 @@
             label5.TabIndex = 11;
             label5.Text = "Зарплата";
             // 
-            // button1
+            // RefreshButton
             // 
-            button1.Font = new Font("Tahoma", 12F, FontStyle.Bold);
-            button1.Location = new Point(436, 690);
-            button1.Name = "button1";
-            button1.Size = new Size(129, 30);
-            button1.TabIndex = 12;
-            button1.Text = "Изменить";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            RefreshButton.Font = new Font("Tahoma", 12F, FontStyle.Bold);
+            RefreshButton.Location = new Point(436, 690);
+            RefreshButton.Name = "RefreshButton";
+            RefreshButton.Size = new Size(129, 30);
+            RefreshButton.TabIndex = 12;
+            RefreshButton.Text = "Изменить";
+            RefreshButton.UseVisualStyleBackColor = true;
+            RefreshButton.Click += button1_Click;
             // 
             // DeleteButton
             // 
@@ -190,16 +190,16 @@
             RefreshDB.UseVisualStyleBackColor = false;
             RefreshDB.Click += RefreshDB_Click;
             // 
-            // button2
+            // ClearButton
             // 
-            button2.Font = new Font("Tahoma", 12F, FontStyle.Bold);
-            button2.Location = new Point(436, 726);
-            button2.Name = "button2";
-            button2.Size = new Size(129, 30);
-            button2.TabIndex = 16;
-            button2.Text = "Отчистить";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            ClearButton.Font = new Font("Tahoma", 12F, FontStyle.Bold);
+            ClearButton.Location = new Point(436, 726);
+            ClearButton.Name = "ClearButton";
+            ClearButton.Size = new Size(129, 30);
+            ClearButton.TabIndex = 16;
+            ClearButton.Text = "Очистить";
+            ClearButton.UseVisualStyleBackColor = true;
+            ClearButton.Click += button2_Click;
             // 
             // label6
             // 
@@ -232,7 +232,7 @@
             // IINBox
             // 
             IINBox.Location = new Point(254, 764);
-            IINBox.Mask = "00000000000";
+            IINBox.Mask = "000000000000";
             IINBox.Name = "IINBox";
             IINBox.Size = new Size(155, 23);
             IINBox.TabIndex = 23;
@@ -266,11 +266,11 @@
             Controls.Add(PhoneNumber);
             Controls.Add(label7);
             Controls.Add(label6);
-            Controls.Add(button2);
+            Controls.Add(ClearButton);
             Controls.Add(RefreshDB);
             Controls.Add(AddNewButton);
             Controls.Add(DeleteButton);
-            Controls.Add(button1);
+            Controls.Add(RefreshButton);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -301,11 +301,11 @@
         private Label label3;
         private Label label4;
         private Label label5;
-        private Button button1;
+        private Button RefreshButton;
         private Button DeleteButton;
         private Button AddNewButton;
         private Button RefreshDB;
-        private Button button2;
+        private Button ClearButton;
         private Label label6;
         private Label label7;
         private MaskedTextBox PhoneNumber;
