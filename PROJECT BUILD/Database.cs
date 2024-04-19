@@ -13,7 +13,7 @@ namespace PROJECT_BUILD
             sqlConnection = new SqlConnection(@"Data Source=AlexPC;Initial Catalog = Строй_Фирма; Integrated Security=True");
         }
 
-        public void openConnection()
+        public void OpenConnection()
         {
             if (sqlConnection.State == System.Data.ConnectionState.Closed)
             {
@@ -21,7 +21,7 @@ namespace PROJECT_BUILD
             }
         }
 
-        public void closedConnection()
+        public void CloseConnection()
         {
             if (sqlConnection.State == System.Data.ConnectionState.Open)
             {
@@ -38,13 +38,13 @@ namespace PROJECT_BUILD
                 command.Parameters.AddWithValue("@PhotoPath", photoPath);
                 command.Parameters.AddWithValue("@LoginUser", loginUser);
 
-                openConnection();
+                OpenConnection();
                 command.ExecuteNonQuery();
-                closedConnection();
+                CloseConnection();
             }
         }
 
-        public SqlConnection getConnection()
+        public SqlConnection GetConnection()
         {
             return sqlConnection;
         }

@@ -37,22 +37,24 @@
             button2 = new Button();
             button1 = new Button();
             groupBox2 = new GroupBox();
+            label3 = new Label();
+            label2 = new Label();
             label5 = new Label();
             label4 = new Label();
             linkLabel1 = new LinkLabel();
-            label3 = new Label();
-            label2 = new Label();
             pictureBox1 = new PictureBox();
             linkLabel2 = new LinkLabel();
+            groupBox1 = new GroupBox();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Tahoma", 12F);
-            label1.Location = new Point(0, 522);
+            label1.Location = new Point(6, 64);
             label1.Name = "label1";
             label1.Size = new Size(51, 19);
             label1.TabIndex = 0;
@@ -132,57 +134,19 @@
             // groupBox2
             // 
             groupBox2.BackColor = Color.LightGray;
-            groupBox2.Controls.Add(label5);
             groupBox2.Controls.Add(button5);
-            groupBox2.Controls.Add(label1);
             groupBox2.Controls.Add(button6);
-            groupBox2.Controls.Add(label4);
-            groupBox2.Controls.Add(linkLabel1);
             groupBox2.Controls.Add(label3);
             groupBox2.Controls.Add(label2);
             groupBox2.Controls.Add(button4);
             groupBox2.Controls.Add(button2);
             groupBox2.Controls.Add(button3);
             groupBox2.Controls.Add(button1);
-            groupBox2.Location = new Point(0, -10);
+            groupBox2.Location = new Point(-1, 9);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(281, 709);
+            groupBox2.Size = new Size(282, 623);
             groupBox2.TabIndex = 2;
             groupBox2.TabStop = false;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Tahoma", 14.75F);
-            label5.Location = new Point(0, 575);
-            label5.Name = "label5";
-            label5.Size = new Size(186, 24);
-            label5.TabIndex = 12;
-            label5.Text = "Имя пользователя:";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Tahoma", 14.75F);
-            label4.Location = new Point(0, 599);
-            label4.Name = "label4";
-            label4.Size = new Size(64, 24);
-            label4.TabIndex = 3;
-            label4.Text = "label4";
-            // 
-            // linkLabel1
-            // 
-            linkLabel1.ActiveLinkColor = Color.DarkRed;
-            linkLabel1.AutoSize = true;
-            linkLabel1.Font = new Font("Tahoma", 12F);
-            linkLabel1.LinkColor = Color.Red;
-            linkLabel1.Location = new Point(0, 623);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(146, 19);
-            linkLabel1.TabIndex = 3;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "Выйти из аккаунта";
-            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
             // label3
             // 
@@ -204,12 +168,49 @@
             label2.TabIndex = 10;
             label2.Text = "Админ панель";
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Tahoma", 14.75F);
+            label5.Location = new Point(6, 3);
+            label5.Name = "label5";
+            label5.Size = new Size(186, 24);
+            label5.TabIndex = 12;
+            label5.Text = "Имя пользователя:";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Tahoma", 12.75F);
+            label4.Location = new Point(6, 34);
+            label4.Name = "label4";
+            label4.Size = new Size(54, 21);
+            label4.TabIndex = 3;
+            label4.Text = "label4";
+            // 
+            // linkLabel1
+            // 
+            linkLabel1.ActiveLinkColor = Color.DarkRed;
+            linkLabel1.AutoSize = true;
+            linkLabel1.Font = new Font("Tahoma", 12F);
+            linkLabel1.LinkColor = Color.Red;
+            linkLabel1.Location = new Point(359, 601);
+            linkLabel1.Name = "linkLabel1";
+            linkLabel1.Size = new Size(146, 19);
+            linkLabel1.TabIndex = 3;
+            linkLabel1.TabStop = true;
+            linkLabel1.Text = "Выйти из аккаунта";
+            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
+            // 
             // pictureBox1
             // 
+            pictureBox1.BackColor = Color.WhiteSmoke;
+            pictureBox1.BackgroundImageLayout = ImageLayout.Center;
+            pictureBox1.BorderStyle = BorderStyle.FixedSingle;
             pictureBox1.ErrorImage = (Image)resources.GetObject("pictureBox1.ErrorImage");
-            pictureBox1.Location = new Point(287, 9);
+            pictureBox1.Location = new Point(246, 3);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(511, 400);
+            pictureBox1.Size = new Size(250, 250);
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
@@ -218,7 +219,7 @@
             // 
             linkLabel2.AutoSize = true;
             linkLabel2.Font = new Font("Tahoma", 12F);
-            linkLabel2.Location = new Point(677, 415);
+            linkLabel2.Location = new Point(375, 264);
             linkLabel2.Name = "linkLabel2";
             linkLabel2.Size = new Size(121, 19);
             linkLabel2.TabIndex = 4;
@@ -226,22 +227,37 @@
             linkLabel2.Text = "Заменить фото";
             linkLabel2.LinkClicked += linkLabel2_LinkClicked;
             // 
+            // groupBox1
+            // 
+            groupBox1.BackColor = Color.LightGray;
+            groupBox1.Controls.Add(label5);
+            groupBox1.Controls.Add(label1);
+            groupBox1.Controls.Add(linkLabel1);
+            groupBox1.Controls.Add(pictureBox1);
+            groupBox1.Controls.Add(linkLabel2);
+            groupBox1.Controls.Add(label4);
+            groupBox1.Location = new Point(287, 9);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(511, 623);
+            groupBox1.TabIndex = 13;
+            groupBox1.TabStop = false;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gray;
             ClientSize = new Size(810, 641);
-            Controls.Add(linkLabel2);
-            Controls.Add(pictureBox1);
+            Controls.Add(groupBox1);
             Controls.Add(groupBox2);
             Name = "MainForm";
             Text = "MainForm";
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -261,5 +277,6 @@
         private Label label5;
         private PictureBox pictureBox1;
         private LinkLabel linkLabel2;
+        private GroupBox groupBox1;
     }
 }

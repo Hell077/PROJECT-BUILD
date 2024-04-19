@@ -33,11 +33,11 @@ namespace PROJECT_BUILD
             string queryString = $"INSERT INTO Заказчик (Название_проекта, Описание, Имя_заказчика, Фамилия_заказчика, Почта_заказчика) " +
                                  $"VALUES ('{orderName}', '{order}', '{FirstName}', '{LastName}', '{email}')";
 
-            SqlCommand command = new SqlCommand(queryString, database.getConnection());
+            SqlCommand command = new SqlCommand(queryString, database.GetConnection());
 
             try
             {
-                database.openConnection();
+                database.OpenConnection();
                 int rowsAffected = command.ExecuteNonQuery();
                 MessageBox.Show($"Ваша заявка успешно добавлена, с вами свяжутся в скором времени");
                 textBox1.Text = null;

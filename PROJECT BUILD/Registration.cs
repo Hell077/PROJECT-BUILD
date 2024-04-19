@@ -54,8 +54,8 @@ namespace PROJECT_BUILD
                 if (!checkuser())
                 {
                     string queryString = $"Insert into register (login_user, password_user) values('{login}', '{password2}')";
-                    SqlCommand command = new SqlCommand(queryString, database.getConnection());
-                    database.openConnection();
+                    SqlCommand command = new SqlCommand(queryString, database.GetConnection());
+                    database.OpenConnection();
 
                     if (command.ExecuteNonQuery() == 1)
                     {
@@ -84,7 +84,7 @@ namespace PROJECT_BUILD
             DataTable table = new DataTable();
 
             string querystring = $"select id_user, login_user, password_user from register where login_user = '{loginUser}'";
-            SqlCommand command = new SqlCommand(querystring, database.getConnection());
+            SqlCommand command = new SqlCommand(querystring, database.GetConnection());
             adapter.SelectCommand = command;
             adapter.Fill(table);
 

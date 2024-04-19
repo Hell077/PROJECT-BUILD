@@ -59,8 +59,8 @@ namespace PROJECT_BUILD
         {
             dgw.Rows.Clear();
             string quertString = $"select * from dbo.Заказчик";
-            SqlCommand command = new SqlCommand(quertString, database.getConnection());
-            database.openConnection();
+            SqlCommand command = new SqlCommand(quertString, database.GetConnection());
+            database.OpenConnection();
             SqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
@@ -89,10 +89,10 @@ namespace PROJECT_BUILD
         private void DeleteRecordFromDatabase(int id)
         {
             Database database = new Database();
-            SqlConnection connection = database.getConnection();
+            SqlConnection connection = database.GetConnection();
             try
             {
-                database.openConnection();
+                database.OpenConnection();
                 SqlCommand command = new SqlCommand("DELETE FROM dbo.Заказчик WHERE Id = @Id", connection);
                 command.Parameters.AddWithValue("@Id", id);
                 command.ExecuteNonQuery();
@@ -104,7 +104,7 @@ namespace PROJECT_BUILD
             }
             finally
             {
-                database.closedConnection();
+                database.CloseConnection();
             }
         }
 

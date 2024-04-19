@@ -47,11 +47,11 @@ namespace PROJECT_BUILD
             {
                 string queryString = $"INSERT INTO Отзывы (Имя, Отзыв, rating) VALUES ('{name}', '{rewiew}', {rating})";
 
-                using (SqlCommand command = new SqlCommand(queryString, database.getConnection()))
+                using (SqlCommand command = new SqlCommand(queryString, database.GetConnection()))
                 {
                     try
                     {
-                        database.openConnection();
+                        database.OpenConnection();
                         int rowsAffected = command.ExecuteNonQuery();
                         if (rowsAffected > 0)
                         {
@@ -75,7 +75,7 @@ namespace PROJECT_BUILD
                     }
                     finally
                     {
-                        database.closedConnection();
+                        database.CloseConnection();
                     }
                 }
             }

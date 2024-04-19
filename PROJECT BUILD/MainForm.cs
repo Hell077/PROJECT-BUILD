@@ -25,8 +25,7 @@ namespace PROJECT_BUILD
             string level = "";
             label4.Text = loginUser;
 
-            LoadPhotoFromDatabase(loginUser); // Загрузка фото из базы при загрузке формы
-
+           
             if (loginUser == "admin")
             {
                 level = "Админ";
@@ -67,52 +66,8 @@ namespace PROJECT_BUILD
             }
         }
 
-        private void LoadPhotoFromDatabase(string loginUser)
-        {
-            string photoLink = GetPhotoLink(loginUser);
-            if (!string.IsNullOrEmpty(photoLink))
-            {
-                pictureBox1.ImageLocation = photoLink;
-            }
-        }
 
-        private string GetPhotoLink(string loginUser)
-        {
-            string photoLink = string.Empty;
-            string query = "SELECT photo_user FROM register WHERE login_user = @LoginUser";
 
-            using (SqlConnection connection = database.getConnection())
-            {
-                connection.Open();
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@LoginUser", loginUser);
-
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            photoLink = reader["photo_user"].ToString();
-                        }
-                    }
-                }
-            }
-
-            return photoLink;
-        }
-
-        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Image Files (*.jpg, *.jpeg, *.png, *.gif, *.bmp)|*.jpg; *.jpeg; *.png; *.gif; *.bmp|All files (*.*)|*.*";
-
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                string selectedFilePath = openFileDialog.FileName;
-                database.SavePhotoPath(selectedFilePath, label4.Text); 
-                LoadPhotoFromDatabase(label4.Text); // Загружаем фото из базы и отображаем в PictureBox
-            }
-        }
 
 
         private void groupBox2_Paint(object sender, PaintEventArgs e)
@@ -163,7 +118,12 @@ namespace PROJECT_BUILD
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            // Handle pictureBox1 click event
+            
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
         }
     }
 }

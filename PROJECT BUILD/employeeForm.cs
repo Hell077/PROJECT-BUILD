@@ -84,8 +84,8 @@ namespace PROJECT_BUILD
         {
             dgw.Rows.Clear();
             string quertString = $"select * from dbo.Сотрудники";
-            SqlCommand command = new SqlCommand(quertString, database.getConnection());
-            database.openConnection();
+            SqlCommand command = new SqlCommand(quertString, database.GetConnection());
+            database.OpenConnection();
             SqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
@@ -174,7 +174,7 @@ namespace PROJECT_BUILD
             try
             {
                 string updateQuery = "UPDATE Сотрудники SET Имя = @newValue1, Фамилия = @newValue2, Должность = @newValue3, Зарплата = @newValue4, Телефон = @newValue5,ИИН = @newValue6, Почта = @newValue7 WHERE ID_сотрудника = @id";
-                using (SqlCommand command = new SqlCommand(updateQuery, database.getConnection()))
+                using (SqlCommand command = new SqlCommand(updateQuery, database.GetConnection()))
                 {
                     command.Parameters.AddWithValue("@newValue1", newValue1);
                     command.Parameters.AddWithValue("@newValue2", newValue2);
@@ -185,9 +185,9 @@ namespace PROJECT_BUILD
                     command.Parameters.AddWithValue("@newValue7", newValue7);
                     command.Parameters.AddWithValue("@id", id);
 
-                    database.openConnection();
+                    database.OpenConnection();
                     int rowsAffected = command.ExecuteNonQuery();
-                    database.closedConnection();
+                    database.CloseConnection();
 
                     return rowsAffected > 0;
                 }
@@ -216,11 +216,11 @@ namespace PROJECT_BUILD
 
             string queryString = $"INSERT INTO Сотрудники (Имя, Фамилия, Должность, Зарплата, Телефон, Иин, Почта) VALUES ('{FirstName}', '{LastName}', '{job_title}','{Salary}' , '{Number}', '{IIN}', '{email}') ";
 
-            using (SqlCommand command = new SqlCommand(queryString, database.getConnection()))
+            using (SqlCommand command = new SqlCommand(queryString, database.GetConnection()))
             {
                 try
                 {
-                    database.openConnection();
+                    database.OpenConnection();
                     int rowsAffected = command.ExecuteNonQuery();
                     if (rowsAffected > 0)
                     {
@@ -237,7 +237,7 @@ namespace PROJECT_BUILD
                 }
                 finally
                 {
-                    database.closedConnection();
+                    database.CloseConnection();
                 }
             }
         }
@@ -268,10 +268,10 @@ namespace PROJECT_BUILD
         private void DeleteRecordFromDatabase(int id)
         {
             Database database = new Database();
-            SqlConnection connection = database.getConnection();
+            SqlConnection connection = database.GetConnection();
             try
             {
-                database.openConnection();
+                database.OpenConnection();
                 SqlCommand command = new SqlCommand("DELETE FROM Сотрудники WHERE Id_сотрудника = @Id", connection);
                 command.Parameters.AddWithValue("@Id", id);
                 command.ExecuteNonQuery();
@@ -283,7 +283,7 @@ namespace PROJECT_BUILD
             }
             finally
             {
-                database.closedConnection();
+                database.CloseConnection();
             }
         }
 
