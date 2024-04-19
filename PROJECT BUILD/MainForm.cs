@@ -9,14 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using PROJECT_BUILD;
-using System.Diagnostics.Eventing.Reader;
-
 
 namespace PROJECT_BUILD
 {
-
     public partial class MainForm : Form
     {
+        Database database = new Database();
+
         public MainForm(string loginUser)
         {
             InitializeComponent();
@@ -24,19 +23,22 @@ namespace PROJECT_BUILD
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             StartPosition = FormStartPosition.CenterScreen;
             string level = "";
+            label4.Text = loginUser;
+
+            LoadPhotoFromDatabase(loginUser); // Загрузка фото из базы при загрузке формы
+
             if (loginUser == "admin")
             {
-                level = "admin";
+                level = "Админ";
             }
             else if (loginUser == "accountant")
             {
-                level = "accountant";
+                level = "Бухгалтер";
             }
             else
             {
-                level = "user";
+                level = "Пользователь";
             }
-
 
             label1.Text = $"Ваш уровень доступа {level}";
             label2.Visible = false;
@@ -44,6 +46,7 @@ namespace PROJECT_BUILD
             if (loginUser == "admin")
             {
                 label2.Visible = true;
+                label3.Visible = false;
                 button6.Visible = false;
                 button5.Visible = false;
                 button4.Visible = true;
@@ -62,35 +65,83 @@ namespace PROJECT_BUILD
                 button3.Visible = false;
                 button4.Visible = false;
             }
+        }
 
+        private void LoadPhotoFromDatabase(string loginUser)
+        {
+            string photoLink = GetPhotoLink(loginUser);
+            if (!string.IsNullOrEmpty(photoLink))
+            {
+                pictureBox1.ImageLocation = photoLink;
+            }
+        }
+
+        private string GetPhotoLink(string loginUser)
+        {
+            string photoLink = string.Empty;
+            string query = "SELECT photo_user FROM register WHERE login_user = @LoginUser";
+
+            using (SqlConnection connection = database.getConnection())
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@LoginUser", loginUser);
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            photoLink = reader["photo_user"].ToString();
+                        }
+                    }
+                }
+            }
+
+            return photoLink;
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image Files (*.jpg, *.jpeg, *.png, *.gif, *.bmp)|*.jpg; *.jpeg; *.png; *.gif; *.bmp|All files (*.*)|*.*";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string selectedFilePath = openFileDialog.FileName;
+                database.SavePhotoPath(selectedFilePath, label4.Text); 
+                LoadPhotoFromDatabase(label4.Text); // Загружаем фото из базы и отображаем в PictureBox
+            }
+        }
+
+
+        private void groupBox2_Paint(object sender, PaintEventArgs e)
+        {
+            ControlPaint.DrawBorder(e.Graphics, groupBox2.ClientRectangle, Color.Black, ButtonBorderStyle.Solid);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             Stock stock = new Stock();
             stock.ShowDialog();
-
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             employeeForm employee = new employeeForm();
             employee.ShowDialog();
-
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
             OrdersForm ordersForm = new OrdersForm();
             ordersForm.ShowDialog();
-
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             OrdersList ordersList = new OrdersList();
             ordersList.ShowDialog();
-
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -101,8 +152,18 @@ namespace PROJECT_BUILD
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Rewiew rewiew = new Rewiew();   
+            Rewiew rewiew = new Rewiew();
             rewiew.ShowDialog();
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Close();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            // Handle pictureBox1 click event
         }
     }
 }

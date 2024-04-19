@@ -17,7 +17,7 @@ namespace PROJECT_BUILD
     public partial class employeeForm : Form
     {
         Database database = new Database();
-        public employeeForm()
+        public employeeForm()   
         {
             InitializeComponent();
             this.MaximizeBox = false;
@@ -84,7 +84,7 @@ namespace PROJECT_BUILD
         {
             dgw.Rows.Clear();
             string quertString = $"select * from dbo.Сотрудники";
-            SqlCommand command = new SqlCommand(quertString, database.GetConnection());
+            SqlCommand command = new SqlCommand(quertString, database.getConnection());
             database.openConnection();
             SqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
@@ -174,7 +174,7 @@ namespace PROJECT_BUILD
             try
             {
                 string updateQuery = "UPDATE Сотрудники SET Имя = @newValue1, Фамилия = @newValue2, Должность = @newValue3, Зарплата = @newValue4, Телефон = @newValue5,ИИН = @newValue6, Почта = @newValue7 WHERE ID_сотрудника = @id";
-                using (SqlCommand command = new SqlCommand(updateQuery, database.GetConnection()))
+                using (SqlCommand command = new SqlCommand(updateQuery, database.getConnection()))
                 {
                     command.Parameters.AddWithValue("@newValue1", newValue1);
                     command.Parameters.AddWithValue("@newValue2", newValue2);
@@ -216,7 +216,7 @@ namespace PROJECT_BUILD
 
             string queryString = $"INSERT INTO Сотрудники (Имя, Фамилия, Должность, Зарплата, Телефон, Иин, Почта) VALUES ('{FirstName}', '{LastName}', '{job_title}','{Salary}' , '{Number}', '{IIN}', '{email}') ";
 
-            using (SqlCommand command = new SqlCommand(queryString, database.GetConnection()))
+            using (SqlCommand command = new SqlCommand(queryString, database.getConnection()))
             {
                 try
                 {
@@ -268,7 +268,7 @@ namespace PROJECT_BUILD
         private void DeleteRecordFromDatabase(int id)
         {
             Database database = new Database();
-            SqlConnection connection = database.GetConnection();
+            SqlConnection connection = database.getConnection();
             try
             {
                 database.openConnection();
