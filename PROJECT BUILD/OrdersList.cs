@@ -59,7 +59,7 @@ namespace PROJECT_BUILD
         {
             dgw.Rows.Clear();
             string quertString = $"select * from dbo.Заказчик";
-            SqlCommand command = new SqlCommand(quertString, database.GetConnection());
+            SqlCommand command = new SqlCommand(quertString, database.getConnection());
             database.openConnection();
             SqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
@@ -89,7 +89,7 @@ namespace PROJECT_BUILD
         private void DeleteRecordFromDatabase(int id)
         {
             Database database = new Database();
-            SqlConnection connection = database.GetConnection();
+            SqlConnection connection = database.getConnection();
             try
             {
                 database.openConnection();

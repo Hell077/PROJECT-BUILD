@@ -33,7 +33,7 @@ namespace PROJECT_BUILD
             string queryString = $"INSERT INTO Заказчик (Название_проекта, Описание, Имя_заказчика, Фамилия_заказчика, Почта_заказчика) " +
                                  $"VALUES ('{orderName}', '{order}', '{FirstName}', '{LastName}', '{email}')";
 
-            SqlCommand command = new SqlCommand(queryString, database.GetConnection());
+            SqlCommand command = new SqlCommand(queryString, database.getConnection());
 
             try
             {

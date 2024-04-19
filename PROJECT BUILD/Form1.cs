@@ -65,7 +65,7 @@ namespace PROJECT_BUILD
             DataTable table = new DataTable();
 
             string queryString = $"Select id_user, login_user, password_user from register where login_user = '{loginUser}' and password_user = '{loginPassword}'";
-            SqlCommand command = new SqlCommand(queryString, database.GetConnection());
+            SqlCommand command = new SqlCommand(queryString, database.getConnection());
             adapter.SelectCommand = command;
             adapter.Fill(table);
 
@@ -76,6 +76,8 @@ namespace PROJECT_BUILD
                 this.Hide();
                 mainForm.ShowDialog();
                 this.Show();
+                loginbox.Text = null;
+                passwordbox.Text = null;
             }
             else
             {

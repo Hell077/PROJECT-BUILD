@@ -50,6 +50,7 @@
             IINBox = new MaskedTextBox();
             label8 = new Label();
             emailBox = new TextBox();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -183,7 +184,7 @@
             RefreshDB.BackgroundImage = (Image)resources.GetObject("RefreshDB.BackgroundImage");
             RefreshDB.BackgroundImageLayout = ImageLayout.Stretch;
             RefreshDB.FlatAppearance.BorderSize = 0;
-            RefreshDB.Location = new Point(617, 622);
+            RefreshDB.Location = new Point(12, 617);
             RefreshDB.Name = "RefreshDB";
             RefreshDB.Size = new Size(103, 103);
             RefreshDB.TabIndex = 15;
@@ -254,12 +255,25 @@
             emailBox.Size = new Size(155, 23);
             emailBox.TabIndex = 25;
             // 
+            // button1
+            // 
+            button1.BackColor = Color.WhiteSmoke;
+            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
+            button1.BackgroundImageLayout = ImageLayout.Stretch;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.Location = new Point(12, 723);
+            button1.Name = "button1";
+            button1.Size = new Size(103, 103);
+            button1.TabIndex = 26;
+            button1.UseVisualStyleBackColor = false;
+            // 
             // employeeForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
-            ClientSize = new Size(992, 859);
+            ClientSize = new Size(992, 860);
+            Controls.Add(button1);
             Controls.Add(emailBox);
             Controls.Add(label8);
             Controls.Add(IINBox);
@@ -312,5 +326,6 @@
         private MaskedTextBox IINBox;
         private Label label8;
         private TextBox emailBox;
+        private Button button1;
     }
 }

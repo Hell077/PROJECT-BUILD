@@ -59,7 +59,7 @@ namespace PROJECT_BUILD
         {
             dgw.Rows.Clear();
             string quertString = $"select * from dbo.Материалы";
-            SqlCommand command = new SqlCommand(quertString, database.GetConnection());
+            SqlCommand command = new SqlCommand(quertString, database.getConnection());
             database.openConnection();
             SqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
