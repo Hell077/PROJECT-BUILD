@@ -17,7 +17,7 @@ namespace PROJECT_BUILD
     public partial class employeeForm : Form
     {
         Database database = new Database();
-        public employeeForm()   
+        public employeeForm()
         {
             InitializeComponent();
             this.MaximizeBox = false;
@@ -104,7 +104,7 @@ namespace PROJECT_BUILD
                 SalaryBox.Text = null;
                 PhoneNumber.Text = null;
                 IINBox.Text = null;
-                emailBox.Text= null;
+                emailBox.Text = null;
 
                 DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
                 string field1Value = selectedRow.Cells[1].Value.ToString();
@@ -301,6 +301,13 @@ namespace PROJECT_BUILD
             PhoneNumber.Text = "";
             IINBox.Text = "";
             emailBox.Text = "";
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Stats stats  = new Stats();
+            stats.ShowDialog();
+                
         }
     }
 

@@ -70,10 +70,10 @@
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.BackgroundColor = Color.Linen;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 51);
+            dataGridView1.Location = new Point(12, 37);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
-            dataGridView1.Size = new Size(968, 562);
+            dataGridView1.Size = new Size(968, 575);
             dataGridView1.TabIndex = 3;
             dataGridView1.SelectionChanged += dataGridView1_SelectionChanged_1;
             // 
@@ -180,11 +180,12 @@
             // 
             // RefreshDB
             // 
-            RefreshDB.BackColor = Color.Transparent;
+            RefreshDB.AccessibleRole = AccessibleRole.None;
+            RefreshDB.BackColor = Color.WhiteSmoke;
             RefreshDB.BackgroundImage = (Image)resources.GetObject("RefreshDB.BackgroundImage");
             RefreshDB.BackgroundImageLayout = ImageLayout.Stretch;
             RefreshDB.FlatAppearance.BorderSize = 0;
-            RefreshDB.Location = new Point(12, 617);
+            RefreshDB.Location = new Point(12, 626);
             RefreshDB.Name = "RefreshDB";
             RefreshDB.Size = new Size(103, 103);
             RefreshDB.TabIndex = 15;
@@ -261,11 +262,12 @@
             button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
             button1.BackgroundImageLayout = ImageLayout.Stretch;
             button1.FlatAppearance.BorderSize = 0;
-            button1.Location = new Point(12, 723);
+            button1.Location = new Point(12, 745);
             button1.Name = "button1";
             button1.Size = new Size(103, 103);
             button1.TabIndex = 26;
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click_1;
             // 
             // employeeForm
             // 
