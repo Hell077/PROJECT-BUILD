@@ -43,7 +43,7 @@
             label4 = new Label();
             linkLabel1 = new LinkLabel();
             pictureBox1 = new PictureBox();
-            linkLabel2 = new LinkLabel();
+            ChangePhoto = new LinkLabel();
             groupBox1 = new GroupBox();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -71,17 +71,21 @@
             button5.Text = "Оставить отзыв";
             button5.UseVisualStyleBackColor = false;
             button5.Click += button5_Click;
+            button5.MouseEnter += button5_MouseEnter_1;
+            button5.MouseLeave += button5_MouseLeave_1;
             // 
             // button4
             // 
             button4.Font = new Font("Tahoma", 14.25F);
-            button4.Location = new Point(0, 289);
+            button4.Location = new Point(1, 289);
             button4.Name = "button4";
             button4.Size = new Size(275, 69);
             button4.TabIndex = 8;
             button4.Text = "Список логинов/паролей";
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
+            button4.MouseEnter += button4_MouseEnter;
+            button4.MouseLeave += button4_MouseLeave;
             // 
             // button3
             // 
@@ -94,10 +98,14 @@
             button3.Text = "Таблица заказов";
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
+            button3.MouseEnter += button3_MouseEnter;
+            button3.MouseLeave += button3_MouseLeave;
             // 
             // button6
             // 
             button6.BackColor = Color.Silver;
+            button6.FlatAppearance.BorderColor = Color.Black;
+            button6.FlatAppearance.BorderSize = 5;
             button6.Font = new Font("Tahoma", 14.25F);
             button6.Location = new Point(0, 64);
             button6.Name = "button6";
@@ -106,6 +114,8 @@
             button6.Text = "Сделать заказ";
             button6.UseVisualStyleBackColor = false;
             button6.Click += button6_Click;
+            button6.MouseEnter += button6_MouseEnter;
+            button6.MouseLeave += button6_MouseLeave;
             // 
             // button2
             // 
@@ -117,6 +127,8 @@
             button2.Text = "Список сотрудников";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
+            button2.MouseEnter += button2_MouseEnter;
+            button2.MouseLeave += button2_MouseLeave;
             // 
             // button1
             // 
@@ -130,21 +142,23 @@
             button1.Text = "Склад";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
+            button1.MouseEnter += button1_MouseEnter;
+            button1.MouseLeave += button1_MouseLeave;
             // 
             // groupBox2
             // 
             groupBox2.BackColor = Color.LightGray;
             groupBox2.Controls.Add(button5);
-            groupBox2.Controls.Add(button6);
             groupBox2.Controls.Add(label3);
             groupBox2.Controls.Add(label2);
+            groupBox2.Controls.Add(button6);
             groupBox2.Controls.Add(button4);
             groupBox2.Controls.Add(button2);
             groupBox2.Controls.Add(button3);
             groupBox2.Controls.Add(button1);
-            groupBox2.Location = new Point(-1, 9);
+            groupBox2.Location = new Point(-1, 0);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(282, 623);
+            groupBox2.Size = new Size(282, 648);
             groupBox2.TabIndex = 2;
             groupBox2.TabStop = false;
             // 
@@ -152,7 +166,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Tahoma", 16F);
-            label3.Location = new Point(4, 30);
+            label3.Location = new Point(13, 28);
             label3.Name = "label3";
             label3.Size = new Size(232, 27);
             label3.TabIndex = 11;
@@ -194,7 +208,7 @@
             linkLabel1.AutoSize = true;
             linkLabel1.Font = new Font("Tahoma", 12F);
             linkLabel1.LinkColor = Color.Red;
-            linkLabel1.Location = new Point(359, 601);
+            linkLabel1.Location = new Point(365, 613);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(146, 19);
             linkLabel1.TabIndex = 3;
@@ -205,27 +219,25 @@
             // pictureBox1
             // 
             pictureBox1.BackColor = Color.WhiteSmoke;
-            pictureBox1.BackgroundImageLayout = ImageLayout.Center;
             pictureBox1.BorderStyle = BorderStyle.FixedSingle;
             pictureBox1.ErrorImage = (Image)resources.GetObject("pictureBox1.ErrorImage");
-            pictureBox1.Location = new Point(246, 3);
+            pictureBox1.Location = new Point(269, 3);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(250, 250);
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
             // 
-            // linkLabel2
+            // ChangePhoto
             // 
-            linkLabel2.AutoSize = true;
-            linkLabel2.Font = new Font("Tahoma", 12F);
-            linkLabel2.Location = new Point(375, 264);
-            linkLabel2.Name = "linkLabel2";
-            linkLabel2.Size = new Size(121, 19);
-            linkLabel2.TabIndex = 4;
-            linkLabel2.TabStop = true;
-            linkLabel2.Text = "Заменить фото";
-            linkLabel2.LinkClicked += linkLabel2_LinkClicked;
+            ChangePhoto.AutoSize = true;
+            ChangePhoto.Font = new Font("Tahoma", 12F);
+            ChangePhoto.Location = new Point(375, 264);
+            ChangePhoto.Name = "ChangePhoto";
+            ChangePhoto.Size = new Size(121, 19);
+            ChangePhoto.TabIndex = 4;
+            ChangePhoto.TabStop = true;
+            ChangePhoto.Text = "Заменить фото";
+            ChangePhoto.LinkClicked += ChangePhoto_LinkClicked;
             // 
             // groupBox1
             // 
@@ -234,11 +246,11 @@
             groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(linkLabel1);
             groupBox1.Controls.Add(pictureBox1);
-            groupBox1.Controls.Add(linkLabel2);
+            groupBox1.Controls.Add(ChangePhoto);
             groupBox1.Controls.Add(label4);
-            groupBox1.Location = new Point(287, 9);
+            groupBox1.Location = new Point(287, 0);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(511, 623);
+            groupBox1.Size = new Size(524, 648);
             groupBox1.TabIndex = 13;
             groupBox1.TabStop = false;
             // 
@@ -246,7 +258,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Gray;
+            BackColor = SystemColors.ControlText;
             ClientSize = new Size(810, 641);
             Controls.Add(groupBox1);
             Controls.Add(groupBox2);
@@ -276,7 +288,7 @@
         private Label label4;
         private Label label5;
         private PictureBox pictureBox1;
-        private LinkLabel linkLabel2;
+        private LinkLabel ChangePhoto;
         private GroupBox groupBox1;
     }
 }

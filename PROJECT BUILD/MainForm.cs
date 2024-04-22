@@ -25,7 +25,7 @@ namespace PROJECT_BUILD
             string level = "";
             label4.Text = loginUser;
 
-           
+
             if (loginUser == "admin")
             {
                 level = "Админ";
@@ -36,7 +36,7 @@ namespace PROJECT_BUILD
             }
             else
             {
-                level = "Пользователь";
+                level = "User";
             }
 
             label1.Text = $"Ваш уровень доступа {level}";
@@ -64,9 +64,23 @@ namespace PROJECT_BUILD
                 button3.Visible = false;
                 button4.Visible = false;
             }
+            LoadImageOnStartup(loginUser);
         }
 
 
+
+        private void LoadImageOnStartup(string loginUser)
+        {
+            if (database.DoesPhotoExist(loginUser))
+            {
+                string photoPath = database.GetPhotoPath(loginUser);
+                if (!string.IsNullOrEmpty(photoPath))
+                {
+                    pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+                    pictureBox1.Image = Image.FromFile(photoPath);
+                }
+            }
+        }
 
 
 
@@ -116,14 +130,100 @@ namespace PROJECT_BUILD
             Close();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private string selectedImagePath;
+        private void ChangePhoto_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Изображения (*.jpg;*.png)|*.jpg;*.png|Все файлы (*.*)|*.*";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                selectedImagePath = openFileDialog.FileName;
+                string loginUser = label4.Text; // Получаем текущего пользователя
+                database.SavePhotoPath(selectedImagePath, loginUser); // Сохраняем путь к изображению в базе данных
+
+                // Загружаем изображение в PictureBox
+                LoadImageFromDatabase(loginUser);
+            }
+            else
+            {
+                MessageBox.Show("Ошибка при выборе изображения");
+            }
         }
 
-        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void LoadImageFromDatabase(string loginUser)
         {
+            string photoPath = database.GetPhotoPath(loginUser);
+            if (!string.IsNullOrEmpty(photoPath))
+            {
+                pictureBox1.Image = Image.FromFile(photoPath);
+            }
+            else
+            {
+                MessageBox.Show("Изображение не найдено для данного пользователя");
+            }
+        }
 
+
+
+        //styles
+        private void button6_MouseEnter(object sender, EventArgs e)
+        {
+            button6.BackColor = Color.LightGray;
+        }
+
+        private void button6_MouseLeave(object sender, EventArgs e)
+        {
+            button6.BackColor = Color.Silver;
+        }
+
+        private void button5_MouseEnter_1(object sender, EventArgs e)
+        {
+            button5.BackColor = Color.LightGray;
+        }
+
+        private void button5_MouseLeave_1(object sender, EventArgs e)
+        {
+            button5.BackColor = Color.Silver;
+        }
+
+        private void button1_MouseEnter(object sender, EventArgs e)
+        {
+            button1.BackColor = Color.LightGray;
+        }
+
+        private void button1_MouseLeave(object sender, EventArgs e)
+        {
+            button1.BackColor = Color.Silver;
+        }
+
+        private void button3_MouseEnter(object sender, EventArgs e)
+        {
+            button3.BackColor = Color.LightGray;
+        }
+
+        private void button3_MouseLeave(object sender, EventArgs e)
+        {
+            button3.BackColor = Color.Silver;
+        }
+
+        private void button2_MouseEnter(object sender, EventArgs e)
+        {
+            button2.BackColor = Color.LightGray;
+        }
+
+        private void button2_MouseLeave(object sender, EventArgs e)
+        {
+            button2.BackColor = Color.Silver;
+        }
+
+        private void button4_MouseEnter(object sender, EventArgs e)
+        {
+            button4.BackColor = Color.LightGray;
+        }
+
+        private void button4_MouseLeave(object sender, EventArgs e)
+        {
+            button4.BackColor = Color.Silver;
         }
     }
 }
