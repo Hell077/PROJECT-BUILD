@@ -93,7 +93,7 @@ namespace PROJECT_BUILD
             try
             {
                 database.OpenConnection();
-                SqlCommand command = new SqlCommand("DELETE FROM dbo.Заказчик WHERE Id = @Id", connection);
+                SqlCommand command = new SqlCommand("DELETE FROM dbo.Заказчик WHERE ID_заказчика = @Id", connection);
                 command.Parameters.AddWithValue("@Id", id);
                 command.ExecuteNonQuery();
                 MessageBox.Show("Запись удалена из базы данных.");

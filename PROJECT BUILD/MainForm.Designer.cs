@@ -54,7 +54,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Tahoma", 12F);
-            label1.Location = new Point(6, 64);
+            label1.Location = new Point(0, 64);
             label1.Name = "label1";
             label1.Size = new Size(51, 19);
             label1.TabIndex = 0;
@@ -64,7 +64,7 @@
             // 
             button5.BackColor = Color.Silver;
             button5.Font = new Font("Tahoma", 14.25F);
-            button5.Location = new Point(0, 139);
+            button5.Location = new Point(1, 485);
             button5.Name = "button5";
             button5.Size = new Size(275, 69);
             button5.TabIndex = 9;
@@ -107,7 +107,7 @@
             button6.FlatAppearance.BorderColor = Color.Black;
             button6.FlatAppearance.BorderSize = 5;
             button6.Font = new Font("Tahoma", 14.25F);
-            button6.Location = new Point(0, 64);
+            button6.Location = new Point(0, 560);
             button6.Name = "button6";
             button6.Size = new Size(275, 69);
             button6.TabIndex = 5;
@@ -186,7 +186,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Tahoma", 14.75F);
-            label5.Location = new Point(6, 3);
+            label5.Location = new Point(0, 3);
             label5.Name = "label5";
             label5.Size = new Size(186, 24);
             label5.TabIndex = 12;
@@ -196,7 +196,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Tahoma", 12.75F);
-            label4.Location = new Point(6, 34);
+            label4.Location = new Point(-3, 34);
             label4.Name = "label4";
             label4.Size = new Size(54, 21);
             label4.TabIndex = 3;

@@ -16,8 +16,12 @@
         private void InitializeComponent()
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Stock));
             dataGridView1 = new DataGridView();
             label1 = new Label();
+            textBox1 = new TextBox();
+            button1 = new Button();
+            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -48,17 +52,49 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(13, 9);
+            label1.Location = new Point(12, 3);
             label1.Name = "label1";
             label1.Size = new Size(461, 22);
             label1.TabIndex = 4;
             label1.Text = "Доступные материалы на складе и их цена за единицу";
+            // 
+            // textBox1
+            // 
+            textBox1.BackColor = Color.WhiteSmoke;
+            textBox1.Location = new Point(713, 3);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(302, 29);
+            textBox1.TabIndex = 5;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.WhiteSmoke;
+            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
+            button1.BackgroundImageLayout = ImageLayout.Stretch;
+            button1.Location = new Point(1021, 3);
+            button1.Name = "button1";
+            button1.Size = new Size(29, 29);
+            button1.TabIndex = 6;
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(537, 6);
+            label2.Name = "label2";
+            label2.Size = new Size(170, 22);
+            label2.TabIndex = 7;
+            label2.Text = "Поиск по названию";
             // 
             // Stock
             // 
             AutoScaleDimensions = new SizeF(10F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1063, 672);
+            Controls.Add(label2);
+            Controls.Add(button1);
+            Controls.Add(textBox1);
             Controls.Add(label1);
             Controls.Add(dataGridView1);
             Font = new Font("Tahoma", 13.25F);
@@ -73,5 +109,8 @@
 
         private DataGridView dataGridView1;
         private Label label1;
+        private TextBox textBox1;
+        private Button button1;
+        private Label label2;
     }
 }

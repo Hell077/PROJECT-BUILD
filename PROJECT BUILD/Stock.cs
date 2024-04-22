@@ -51,10 +51,9 @@ namespace PROJECT_BUILD
                 record.GetString(2),
                 Convert.ToInt32(record[3]).ToString(),
                 record.GetDecimal(4)
-                
+
             );
         }
-
         private void UpdateDataGridView(DataGridView dgw)
         {
             dgw.Rows.Clear();
@@ -68,6 +67,29 @@ namespace PROJECT_BUILD
             }
             reader.Close();
         }
-
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string searchValue = textBox1.Text.Trim().ToLower();
+            if (string.IsNullOrEmpty(searchValue))
+            {
+                MessageBox.Show("Введите текст для поиска");
+                return;
+            }
+            var filteredRows = from DataGridViewRow row in dataGridView1.Rows
+                               where row.Cells["name"].Value != null && row.Cells["name"].Value.ToString().ToLower().StartsWith(searchValue)
+                               select row;
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                row.Selected = false;
+            }
+            foreach (DataGridViewRow row in filteredRows)
+            {
+                row.Selected = true;
+            }
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                dataGridView1.FirstDisplayedScrollingRowIndex = dataGridView1.SelectedRows[0].Index;
+            }
+        }
     }
 }
