@@ -47,9 +47,10 @@
             // 
             // button1
             // 
-            button1.Location = new Point(746, 567);
+            button1.Font = new Font("Tahoma", 13F);
+            button1.Location = new Point(12, 523);
             button1.Name = "button1";
-            button1.Size = new Size(216, 48);
+            button1.Size = new Size(242, 59);
             button1.TabIndex = 13;
             button1.Text = "Удалить выбранный заказ";
             button1.UseVisualStyleBackColor = true;
@@ -63,14 +64,14 @@
             dataGridView1.Location = new Point(12, 47);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
-            dataGridView1.Size = new Size(728, 568);
+            dataGridView1.Size = new Size(984, 470);
             dataGridView1.TabIndex = 14;
             // 
             // OrdersList
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(974, 627);
+            ClientSize = new Size(1008, 591);
             Controls.Add(dataGridView1);
             Controls.Add(button1);
             Controls.Add(label4);

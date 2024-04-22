@@ -37,6 +37,9 @@ namespace PROJECT_BUILD
             dataGridView1.Columns.Add("customer_name", "Имя заказчика");
             dataGridView1.Columns.Add("customer_lastname", "Фамилия заказчика");
             dataGridView1.Columns.Add("customer_email", "Почта заказчика");
+            dataGridView1.Columns.Add("square", "Площадь");
+            dataGridView1.Columns.Add("status", "Ремонт");
+            dataGridView1.Columns.Add("FinalPrice", "Расетная_стоимость");
             dataGridView1.Columns.Add("IsNew", String.Empty);
         }
 
@@ -50,6 +53,9 @@ namespace PROJECT_BUILD
                 record.GetString(3),
                 record.GetString(4),
                 record.GetString(5),
+                record.GetInt32(6),
+                record.GetString(7),
+                record.GetString(8),
                 RowState.ModifiedNew
             );
         }
@@ -58,7 +64,7 @@ namespace PROJECT_BUILD
         private void UpdateDataGridView(DataGridView dgw)
         {
             dgw.Rows.Clear();
-            string quertString = $"select * from dbo.Заказчик";
+            string quertString = $"select * from dbo.Закзачик";
             SqlCommand command = new SqlCommand(quertString, database.GetConnection());
             database.OpenConnection();
             SqlDataReader reader = command.ExecuteReader();
@@ -93,7 +99,7 @@ namespace PROJECT_BUILD
             try
             {
                 database.OpenConnection();
-                SqlCommand command = new SqlCommand("DELETE FROM dbo.Заказчик WHERE ID_заказчика = @Id", connection);
+                SqlCommand command = new SqlCommand("DELETE FROM dbo.Закзачик WHERE ID_заказчика = @Id", connection);
                 command.Parameters.AddWithValue("@Id", id);
                 command.ExecuteNonQuery();
                 MessageBox.Show("Запись удалена из базы данных.");
