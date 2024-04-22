@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Data.SqlClient;
-using PROJECT_BUILD;
+﻿using System.Data.SqlClient;
 
 namespace PROJECT_BUILD
 {
@@ -22,50 +12,62 @@ namespace PROJECT_BUILD
             this.MaximizeBox = false;
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             StartPosition = FormStartPosition.CenterScreen;
-            string level = "";
+
+            string access = ""; 
+
             label4.Text = loginUser;
+           
 
-
-            if (loginUser == "admin")
+            try
             {
-                level = "Админ";
+                string queryString = "SELECT user_access FROM register WHERE login_user = @loginUser";
+                using (SqlCommand command = new SqlCommand(queryString, database.GetConnection()))
+                {
+                    command.Parameters.AddWithValue("@loginUser", loginUser);
+
+                    database.OpenConnection();
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        access = reader.GetString(0); 
+                        label1.Text = $"Ваш уровень доступа {access}";
+                        label2.Visible = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Пользователь не найден в базе данных.");
+                    }
+                    reader.Close();
+                    database.CloseConnection();
+                }
             }
-            else if (loginUser == "accountant")
+            catch (Exception ex)
             {
-                level = "Бухгалтер";
-            }
-            else
-            {
-                level = "User";
+                MessageBox.Show("Ошибка при получении данных из базы данных: " + ex.Message);
             }
 
-            label1.Text = $"Ваш уровень доступа {level}";
-            label2.Visible = false;
-
-            if (loginUser == "admin")
+            LoadImageOnStartup(loginUser);
+            if (access == "Admin")
             {
-                label2.Visible = true;
-                label3.Visible = false;
                 button6.Visible = false;
                 button5.Visible = false;
-                button4.Visible = true;
             }
-            else if (loginUser == "accountant")
+            if (access == "Manager")
             {
                 button6.Visible = false;
-                button1.Enabled = false;
+                button5.Visible = false;
                 button4.Visible = false;
             }
-            else
+            if (access == "User")
             {
-                button6.Visible = true;
-                button1.Visible = false;
-                button2.Visible = false;
-                button3.Visible = false;
                 button4.Visible = false;
+                button3.Visible = false;
+                button2.Visible = false;
+                button1.Visible = false;
             }
-            LoadImageOnStartup(loginUser);
+
         }
+
 
 
 
@@ -138,10 +140,8 @@ namespace PROJECT_BUILD
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 selectedImagePath = openFileDialog.FileName;
-                string loginUser = label4.Text; // Получаем текущего пользователя
-                database.SavePhotoPath(selectedImagePath, loginUser); // Сохраняем путь к изображению в базе данных
-
-                // Загружаем изображение в PictureBox
+                string loginUser = label4.Text;
+                database.SavePhotoPath(selectedImagePath, loginUser);
                 LoadImageFromDatabase(loginUser);
             }
             else

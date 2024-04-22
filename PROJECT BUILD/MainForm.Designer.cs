@@ -64,7 +64,7 @@
             // 
             button5.BackColor = Color.Silver;
             button5.Font = new Font("Tahoma", 14.25F);
-            button5.Location = new Point(1, 485);
+            button5.Location = new Point(0, 64);
             button5.Name = "button5";
             button5.Size = new Size(275, 69);
             button5.TabIndex = 9;
@@ -107,7 +107,7 @@
             button6.FlatAppearance.BorderColor = Color.Black;
             button6.FlatAppearance.BorderSize = 5;
             button6.Font = new Font("Tahoma", 14.25F);
-            button6.Location = new Point(0, 560);
+            button6.Location = new Point(1, 139);
             button6.Name = "button6";
             button6.Size = new Size(275, 69);
             button6.TabIndex = 5;

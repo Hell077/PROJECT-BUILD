@@ -27,9 +27,9 @@ namespace PROJECT_BUILD
         {
             CreateColumns();
             UpdateDataGridView(dataGridView1);
-            dataGridView1.Dock = DockStyle.None; // Занимает всё доступное пространство
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill; // Адаптивное заполнение по горизонтали
-            dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None; // Оставить высоту строк фиксированной
+            dataGridView1.Dock = DockStyle.None;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill; 
+            dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None; 
 
         }
 

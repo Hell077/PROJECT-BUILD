@@ -31,7 +31,6 @@
             label4 = new Label();
             button1 = new Button();
             dataGridView1 = new DataGridView();
-            button3 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -48,7 +47,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(746, 190);
+            button1.Location = new Point(746, 567);
             button1.Name = "button1";
             button1.Size = new Size(216, 48);
             button1.TabIndex = 13;
@@ -67,21 +66,11 @@
             dataGridView1.Size = new Size(728, 568);
             dataGridView1.TabIndex = 14;
             // 
-            // button3
-            // 
-            button3.Location = new Point(746, 244);
-            button3.Name = "button3";
-            button3.Size = new Size(216, 48);
-            button3.TabIndex = 16;
-            button3.Text = "Поменять статус";
-            button3.UseVisualStyleBackColor = true;
-            // 
             // OrdersList
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(974, 627);
-            Controls.Add(button3);
             Controls.Add(dataGridView1);
             Controls.Add(button1);
             Controls.Add(label4);
@@ -98,6 +87,5 @@
         private Label label4;
         private Button button1;
         private DataGridView dataGridView1;
-        private Button button3;
     }
 }

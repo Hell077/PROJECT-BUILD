@@ -48,12 +48,13 @@ namespace PROJECT_BUILD
             var login = loginbox.Text;
             var password2 = Password2.Text;
             var password3 = Password3.Text;
+            string access = "User";
 
             if (!string.IsNullOrEmpty(login) && !string.IsNullOrEmpty(password2) && !string.IsNullOrEmpty(password3) && password2 == password3)
             {
                 if (!checkuser())
                 {
-                    string queryString = $"Insert into register (login_user, password_user) values('{login}', '{password2}')";
+                    string queryString = $"Insert into register (login_user, password_user, user_access) values('{login}', '{password2}', '{access}')";
                     SqlCommand command = new SqlCommand(queryString, database.GetConnection());
                     database.OpenConnection();
 
