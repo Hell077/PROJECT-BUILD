@@ -305,11 +305,7 @@ namespace PROJECT_BUILD
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-<<<<<<< HEAD
             Statistic stats  = new Statistic();
-=======
-            Stats stats  = new Stats();
->>>>>>> 64162a078aeb9ebb169c407ce5436cc9a568ed7e
             stats.ShowDialog();
                 
         }
