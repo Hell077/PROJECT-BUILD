@@ -297,6 +297,7 @@
             Controls.Add(NameBox);
             Controls.Add(dataGridView1);
             Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "employeeForm";
             Text = "Сотрудники";
             Load += employee_Load;

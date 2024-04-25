@@ -13,10 +13,10 @@ namespace PROJECT_BUILD
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             StartPosition = FormStartPosition.CenterScreen;
 
-            string access = ""; 
+            string access = "";
 
             label4.Text = loginUser;
-           
+
 
             try
             {
@@ -29,9 +29,8 @@ namespace PROJECT_BUILD
                     SqlDataReader reader = command.ExecuteReader();
                     if (reader.Read())
                     {
-                        access = reader.GetString(0); 
+                        access = reader.GetString(0);
                         label1.Text = $"Ваш уровень доступа {access}";
-                        label2.Visible = false;
                     }
                     else
                     {
@@ -49,21 +48,21 @@ namespace PROJECT_BUILD
             LoadImageOnStartup(loginUser);
             if (access == "Admin")
             {
-                button6.Visible = false;
-                button5.Visible = false;
+                panel10.Visible = false;
+                panel18.Visible = false;
             }
             if (access == "Manager")
             {
-                button6.Visible = false;
-                button5.Visible = false;
-                button4.Visible = false;
+                panel10.Visible = false;
+                panel18.Visible = false;
+                panel3.Visible = false;
             }
             if (access == "User")
             {
-                button4.Visible = false;
-                button3.Visible = false;
-                button2.Visible = false;
-                button1.Visible = false;
+                panel14.Visible = false;
+                panel5.Visible = false;
+                panel3.Visible = false;
+                panel1.Visible = false;
             }
 
         }
@@ -84,12 +83,6 @@ namespace PROJECT_BUILD
             }
         }
 
-
-
-        private void groupBox2_Paint(object sender, PaintEventArgs e)
-        {
-            ControlPaint.DrawBorder(e.Graphics, groupBox2.ClientRectangle, Color.Black, ButtonBorderStyle.Solid);
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -127,13 +120,14 @@ namespace PROJECT_BUILD
             rewiew.ShowDialog();
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void iconButton5_Click(object sender, EventArgs e)
         {
             Close();
         }
 
         private string selectedImagePath;
-        private void ChangePhoto_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+
+        private void ChangePhoto_LinkClicked(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Изображения (*.jpg;*.png)|*.jpg;*.png|Все файлы (*.*)|*.*";
@@ -150,6 +144,7 @@ namespace PROJECT_BUILD
             }
         }
 
+
         private void LoadImageFromDatabase(string loginUser)
         {
             string photoPath = database.GetPhotoPath(loginUser);
@@ -163,67 +158,10 @@ namespace PROJECT_BUILD
             }
         }
 
-
-
-        //styles
-        private void button6_MouseEnter(object sender, EventArgs e)
+        private void iconButton8_Click(object sender, EventArgs e)
         {
-            button6.BackColor = Color.LightGray;
-        }
 
-        private void button6_MouseLeave(object sender, EventArgs e)
-        {
-            button6.BackColor = Color.Silver;
-        }
-
-        private void button5_MouseEnter_1(object sender, EventArgs e)
-        {
-            button5.BackColor = Color.LightGray;
-        }
-
-        private void button5_MouseLeave_1(object sender, EventArgs e)
-        {
-            button5.BackColor = Color.Silver;
-        }
-
-        private void button1_MouseEnter(object sender, EventArgs e)
-        {
-            button1.BackColor = Color.LightGray;
-        }
-
-        private void button1_MouseLeave(object sender, EventArgs e)
-        {
-            button1.BackColor = Color.Silver;
-        }
-
-        private void button3_MouseEnter(object sender, EventArgs e)
-        {
-            button3.BackColor = Color.LightGray;
-        }
-
-        private void button3_MouseLeave(object sender, EventArgs e)
-        {
-            button3.BackColor = Color.Silver;
-        }
-
-        private void button2_MouseEnter(object sender, EventArgs e)
-        {
-            button2.BackColor = Color.LightGray;
-        }
-
-        private void button2_MouseLeave(object sender, EventArgs e)
-        {
-            button2.BackColor = Color.Silver;
-        }
-
-        private void button4_MouseEnter(object sender, EventArgs e)
-        {
-            button4.BackColor = Color.LightGray;
-        }
-
-        private void button4_MouseLeave(object sender, EventArgs e)
-        {
-            button4.BackColor = Color.Silver;
         }
     }
 }
+
