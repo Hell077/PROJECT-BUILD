@@ -1,20 +1,23 @@
-﻿using System.Data.SqlClient;
+﻿using Guna.UI2.WinForms;
+using System.Data.SqlClient;
 
 namespace PROJECT_BUILD
 {
     public partial class MainForm : Form
     {
         Database database = new Database();
-
+        bool dragging = false;
+        Point dragCursorPoint;
+        Point dragFormPoint;
         public MainForm(string loginUser)
         {
             InitializeComponent();
             this.MaximizeBox = false;
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             StartPosition = FormStartPosition.CenterScreen;
-
+            this.FormBorderStyle = FormBorderStyle.None;
             string access = "";
-
+            this.MinimizeBox = true;
             label4.Text = loginUser;
 
 
@@ -50,12 +53,14 @@ namespace PROJECT_BUILD
             {
                 panel10.Visible = false;
                 panel18.Visible = false;
+                panel20.Visible = false;
             }
             if (access == "Manager")
             {
                 panel10.Visible = false;
                 panel18.Visible = false;
                 panel3.Visible = false;
+                panel20.Visible = false;
             }
             if (access == "User")
             {
@@ -77,7 +82,7 @@ namespace PROJECT_BUILD
                 string photoPath = database.GetPhotoPath(loginUser);
                 if (!string.IsNullOrEmpty(photoPath))
                 {
-                    pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+                    pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
                     pictureBox1.Image = Image.FromFile(photoPath);
                 }
             }
@@ -159,6 +164,42 @@ namespace PROJECT_BUILD
         }
 
         private void iconButton8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CloseButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void minimizeButton_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void panel7_MouseDown(object sender, MouseEventArgs e)
+        {
+            dragging = true;
+            dragCursorPoint = Cursor.Position;
+            dragFormPoint = this.Location;
+        }
+
+        private void panel7_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (dragging)
+            {
+                Point dif = Point.Subtract(Cursor.Position, new Size(dragCursorPoint));
+                this.Location = Point.Add(dragFormPoint, new Size(dif));
+            }
+        }
+
+        private void panel7_MouseUp(object sender, MouseEventArgs e)
+        {
+            dragging = false;
+        }
+
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

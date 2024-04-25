@@ -39,7 +39,7 @@ namespace PROJECT_BUILD
             dataGridView1.Columns.Add("customer_email", "Почта заказчика");
             dataGridView1.Columns.Add("square", "Площадь");
             dataGridView1.Columns.Add("status", "Ремонт");
-            dataGridView1.Columns.Add("FinalPrice", "Расетная_стоимость");
+            dataGridView1.Columns.Add("FinalPrice", "Расчетная_стоимость");
             dataGridView1.Columns.Add("IsNew", String.Empty);
         }
 
