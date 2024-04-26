@@ -62,14 +62,14 @@
             dataGridView1.Size = new Size(564, 248);
             dataGridView1.TabIndex = 1;
             // 
-            // Stats
+            // Statistic
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(779, 609);
             Controls.Add(dataGridView1);
             Controls.Add(chart1);
-            Name = "Stats";
+            Name = "Statistic";
             Text = "Form2";
             Load += Stats_Load;
             ((System.ComponentModel.ISupportInitialize)chart1).EndInit();

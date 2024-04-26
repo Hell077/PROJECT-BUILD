@@ -71,10 +71,6 @@ namespace PROJECT_BUILD
             }
 
         }
-
-
-
-
         private void LoadImageOnStartup(string loginUser)
         {
             if (database.DoesPhotoExist(loginUser))
@@ -87,8 +83,6 @@ namespace PROJECT_BUILD
                 }
             }
         }
-
-
         private void button1_Click(object sender, EventArgs e)
         {
             Stock stock = new Stock();
@@ -131,7 +125,6 @@ namespace PROJECT_BUILD
         }
 
         private string selectedImagePath;
-
         private void ChangePhoto_LinkClicked(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -197,11 +190,6 @@ namespace PROJECT_BUILD
         private void panel7_MouseUp(object sender, MouseEventArgs e)
         {
             dragging = false;
-        }
-
-        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

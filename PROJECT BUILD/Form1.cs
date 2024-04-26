@@ -9,6 +9,10 @@ namespace PROJECT_BUILD
     public partial class Identification : Form
     {
         Database database = new Database();
+        bool dragging = false;
+        Point dragCursorPoint;
+        Point dragFormPoint;
+
         public Identification()
         {
             InitializeComponent();
@@ -18,6 +22,7 @@ namespace PROJECT_BUILD
             passwordbox.PasswordChar = '*';
             passwordbox.MaxLength = 50;
             loginbox.MaxLength = 20;
+            this.FormBorderStyle = FormBorderStyle.None;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -81,6 +86,42 @@ namespace PROJECT_BUILD
             else
             {
                 MessageBox.Show("Неверный логин или пароль");
+            }
+        }
+
+        private void CloseButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void minimizeButton_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_MouseDown_1(object sender, MouseEventArgs e)
+        {
+            dragging = true;
+            dragCursorPoint = Cursor.Position;
+            dragFormPoint = this.Location;
+        }
+
+        private void panel1_MouseUp_1(object sender, MouseEventArgs e)
+        {
+            dragging = false;
+        }
+
+        private void panel1_MouseMove_1(object sender, MouseEventArgs e)
+        {
+            if (dragging)
+            {
+                Point dif = Point.Subtract(Cursor.Position, new Size(dragCursorPoint));
+                this.Location = Point.Add(dragFormPoint, new Size(dif));
             }
         }
     }

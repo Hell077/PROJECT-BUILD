@@ -112,7 +112,7 @@
             pictureBox1.BackColor = Color.WhiteSmoke;
             pictureBox1.BorderStyle = BorderStyle.FixedSingle;
             pictureBox1.ErrorImage = (Image)resources.GetObject("pictureBox1.ErrorImage");
-            pictureBox1.Location = new Point(11, 8);
+            pictureBox1.Location = new Point(11, 7);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(263, 266);
             pictureBox1.TabIndex = 3;
@@ -277,7 +277,7 @@
             panel3.BorderStyle = BorderStyle.FixedSingle;
             panel3.Controls.Add(panel4);
             panel3.Controls.Add(iconButton1);
-            panel3.Location = new Point(1, 403);
+            panel3.Location = new Point(4, 343);
             panel3.Name = "panel3";
             panel3.Size = new Size(244, 62);
             panel3.TabIndex = 18;
@@ -322,7 +322,7 @@
             panel5.BorderStyle = BorderStyle.FixedSingle;
             panel5.Controls.Add(panel6);
             panel5.Controls.Add(iconButton2);
-            panel5.Location = new Point(1, 332);
+            panel5.Location = new Point(4, 272);
             panel5.Name = "panel5";
             panel5.Size = new Size(244, 64);
             panel5.TabIndex = 19;
@@ -366,7 +366,7 @@
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(button2);
-            panel1.Location = new Point(0, 263);
+            panel1.Location = new Point(3, 203);
             panel1.Name = "panel1";
             panel1.Size = new Size(245, 59);
             panel1.TabIndex = 16;
@@ -457,7 +457,7 @@
             panel12.Controls.Add(iconButton5);
             panel12.Location = new Point(2, 478);
             panel12.Name = "panel12";
-            panel12.Size = new Size(251, 61);
+            panel12.Size = new Size(243, 61);
             panel12.TabIndex = 21;
             // 
             // panel13
@@ -484,7 +484,7 @@
             iconButton5.Location = new Point(15, 0);
             iconButton5.Name = "iconButton5";
             iconButton5.RightToLeft = RightToLeft.No;
-            iconButton5.Size = new Size(267, 59);
+            iconButton5.Size = new Size(227, 59);
             iconButton5.TabIndex = 0;
             iconButton5.Text = "Выйти из аккаунта";
             iconButton5.TextAlign = ContentAlignment.MiddleLeft;
@@ -499,7 +499,7 @@
             panel14.BorderStyle = BorderStyle.FixedSingle;
             panel14.Controls.Add(panel15);
             panel14.Controls.Add(iconButton6);
-            panel14.Location = new Point(0, 199);
+            panel14.Location = new Point(3, 139);
             panel14.Name = "panel14";
             panel14.Size = new Size(245, 59);
             panel14.TabIndex = 22;
