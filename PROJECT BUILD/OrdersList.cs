@@ -14,12 +14,15 @@ namespace PROJECT_BUILD
     public partial class OrdersList : Form
     {
         Database database = new Database();
+        bool dragging = false;
+        Point dragCursorPoint;
+        Point dragFormPoint;
         public OrdersList()
         {
 
             InitializeComponent();
             this.MaximizeBox = false;
-            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = FormBorderStyle.None;
             StartPosition = FormStartPosition.CenterScreen;
         }
 
@@ -40,6 +43,7 @@ namespace PROJECT_BUILD
             dataGridView1.Columns.Add("square", "Площадь");
             dataGridView1.Columns.Add("status", "Ремонт");
             dataGridView1.Columns.Add("FinalPrice", "Расчетная_стоимость");
+            dataGridView1.Columns.Add("GetStatus", "Статус выполнения");
             dataGridView1.Columns.Add("IsNew", String.Empty);
         }
 
@@ -56,6 +60,7 @@ namespace PROJECT_BUILD
                 record.GetInt32(6),
                 record.GetString(7),
                 record.GetString(8),
+                record.GetString(9),
                 RowState.ModifiedNew
             );
         }
@@ -64,7 +69,7 @@ namespace PROJECT_BUILD
         private void UpdateDataGridView(DataGridView dgw)
         {
             dgw.Rows.Clear();
-            string quertString = $"select * from dbo.Закзачик";
+            string quertString = $"select * from dbo.Заказчик";
             SqlCommand command = new SqlCommand(quertString, database.GetConnection());
             database.OpenConnection();
             SqlDataReader reader = command.ExecuteReader();
@@ -81,8 +86,8 @@ namespace PROJECT_BUILD
             {
                 int selectedIndex = dataGridView1.SelectedRows[0].Index;
                 int idToDelete = Convert.ToInt32(dataGridView1.Rows[selectedIndex].Cells["id"].Value);
-                  DeleteRecordFromDatabase(idToDelete);
-                 dataGridView1.Rows.RemoveAt(selectedIndex);
+                DeleteRecordFromDatabase(idToDelete);
+                dataGridView1.Rows.RemoveAt(selectedIndex);
 
                 MessageBox.Show("Запись удалена из базы данных и из DataGridView.");
             }
@@ -99,7 +104,7 @@ namespace PROJECT_BUILD
             try
             {
                 database.OpenConnection();
-                SqlCommand command = new SqlCommand("DELETE FROM dbo.Закзачик WHERE ID_заказчика = @Id", connection);
+                SqlCommand command = new SqlCommand("DELETE FROM dbo.Заказчик WHERE ID_заказчика = @Id", connection);
                 command.Parameters.AddWithValue("@Id", id);
                 command.ExecuteNonQuery();
                 MessageBox.Show("Запись удалена из базы данных.");
@@ -114,5 +119,35 @@ namespace PROJECT_BUILD
             }
         }
 
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (dragging)
+            {
+                Point dif = Point.Subtract(System.Windows.Forms.Cursor.Position, new Size(dragCursorPoint));
+                this.Location = Point.Add(dragFormPoint, new Size(dif));
+            }
+        }
+
+        private void panel1_MouseUp(object sender, MouseEventArgs e)
+        {
+            dragging = false;
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            dragging = true;
+            dragCursorPoint = System.Windows.Forms.Cursor.Position;
+            dragFormPoint = this.Location;
+        }
+
+        private void CloseButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void minimizeButton_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }
