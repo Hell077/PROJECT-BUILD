@@ -80,6 +80,7 @@
             iconButton7 = new FontAwesome.Sharp.IconButton();
             guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(components);
             panel7 = new Panel();
+            label2 = new Label();
             button1 = new Button();
             button3 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -121,7 +122,7 @@
             pictureBox1.BackColor = Color.WhiteSmoke;
             pictureBox1.BorderStyle = BorderStyle.FixedSingle;
             pictureBox1.ErrorImage = (Image)resources.GetObject("pictureBox1.ErrorImage");
-            pictureBox1.Location = new Point(11, 9);
+            pictureBox1.Location = new Point(11, 5);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(263, 266);
             pictureBox1.TabIndex = 3;
@@ -222,7 +223,7 @@
             iconButton12.FlatStyle = FlatStyle.Flat;
             iconButton12.Font = new Font("Tahoma", 12F);
             iconButton12.ForeColor = SystemColors.ButtonHighlight;
-            iconButton12.IconChar = FontAwesome.Sharp.IconChar.LayerGroup;
+            iconButton12.IconChar = FontAwesome.Sharp.IconChar.Instalod;
             iconButton12.IconColor = Color.Gainsboro;
             iconButton12.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton12.ImageAlign = ContentAlignment.MiddleLeft;
@@ -697,8 +698,8 @@
             // 
             guna2Panel2.BackColor = Color.FromArgb(0, 0, 0, 0);
             guna2Panel2.Controls.Add(panel16);
-            guna2Panel2.Controls.Add(pictureBox1);
             guna2Panel2.Controls.Add(label1);
+            guna2Panel2.Controls.Add(pictureBox1);
             guna2Panel2.Controls.Add(label4);
             guna2Panel2.CustomizableEdges = customizableEdges3;
             guna2Panel2.FillColor = SystemColors.WindowFrame;
@@ -764,6 +765,7 @@
             // panel7
             // 
             panel7.BackColor = Color.WhiteSmoke;
+            panel7.Controls.Add(label2);
             panel7.Controls.Add(button1);
             panel7.Controls.Add(button3);
             panel7.Dock = DockStyle.Top;
@@ -774,6 +776,18 @@
             panel7.MouseDown += panel7_MouseDown;
             panel7.MouseMove += panel7_MouseMove;
             panel7.MouseUp += panel7_MouseUp;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Tahoma", 12.75F);
+            label2.ForeColor = SystemColors.ActiveCaptionText;
+            label2.Location = new Point(6, 7);
+            label2.Name = "label2";
+            label2.Size = new Size(122, 21);
+            label2.TabIndex = 24;
+            label2.Text = "Главное меню";
             // 
             // button1
             // 
@@ -835,6 +849,7 @@
             guna2Panel2.PerformLayout();
             panel16.ResumeLayout(false);
             panel7.ResumeLayout(false);
+            panel7.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -888,5 +903,6 @@
         private Panel panel27;
         private FontAwesome.Sharp.IconButton iconButton11;
         private FontAwesome.Sharp.IconButton iconButton12;
+        private Label label2;
     }
 }

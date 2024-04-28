@@ -42,7 +42,7 @@ namespace PROJECT_BUILD
             dataGridView1.Columns.Add("Площадь", "Площадь");
             dataGridView1.Columns.Add("Ремонт", "Ремонт");
             dataGridView1.Columns.Add("Расчётная_стоимость", "Расчётная стоимость");
-            
+
 
         }
 
@@ -51,16 +51,16 @@ namespace PROJECT_BUILD
             dgw.Rows.Add(
                 record.GetInt32(0),
                 record.GetString(10),
-                record.GetString(9),  
-                record.GetString(1),  
-                record.GetString(2), 
-                record.GetString(3),  
-                record.GetString(4),  
+                record.GetString(9),
+                record.GetString(1),
+                record.GetString(2),
+                record.GetString(3),
+                record.GetString(4),
                 record.GetString(5),  // Почта_заказчика
                 record.GetInt32(6),   // Площадь
                 record.GetString(7),  // Ремонт
                 record.GetString(8)  // Расчетная_стоимость
-                
+
            );
         }
 

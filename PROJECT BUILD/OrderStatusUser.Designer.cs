@@ -38,8 +38,6 @@
             button1 = new Button();
             label1 = new Label();
             button3 = new Button();
-            radioButton1 = new RadioButton();
-            radioButton2 = new RadioButton();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             iconButton1 = new FontAwesome.Sharp.IconButton();
             dataGridView1 = new DataGridView();
@@ -119,35 +117,9 @@
             button3.UseVisualStyleBackColor = true;
             button3.Click += CloseButton_Click;
             // 
-            // radioButton1
-            // 
-            radioButton1.AutoSize = true;
-            radioButton1.Font = new Font("Tahoma", 9F);
-            radioButton1.Location = new Point(3, 21);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(137, 18);
-            radioButton1.TabIndex = 2;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "Выделить активные";
-            radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            radioButton2.AutoSize = true;
-            radioButton2.Font = new Font("Tahoma", 9F);
-            radioButton2.Location = new Point(3, 45);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(159, 18);
-            radioButton2.TabIndex = 3;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "Выделить завершенные";
-            radioButton2.UseVisualStyleBackColor = true;
-            // 
             // guna2Panel1
             // 
             guna2Panel1.Controls.Add(iconButton1);
-            guna2Panel1.Controls.Add(radioButton1);
-            guna2Panel1.Controls.Add(radioButton2);
             guna2Panel1.CustomizableEdges = customizableEdges1;
             guna2Panel1.Dock = DockStyle.Left;
             guna2Panel1.Location = new Point(0, 46);
@@ -180,7 +152,7 @@
             // 
             dataGridView1.BackgroundColor = SystemColors.ButtonFace;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(178, 52);
+            dataGridView1.Location = new Point(162, 52);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.Size = new Size(1137, 531);
             dataGridView1.TabIndex = 5;
@@ -202,7 +174,6 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             guna2Panel1.ResumeLayout(false);
-            guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
@@ -211,8 +182,6 @@
         private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
         private Panel panel1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private RadioButton radioButton1;
-        private RadioButton radioButton2;
         private Label label1;
         private FontAwesome.Sharp.IconButton iconButton1;
         private Button button1;
