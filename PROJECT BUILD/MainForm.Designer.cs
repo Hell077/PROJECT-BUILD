@@ -34,10 +34,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             label4 = new Label();
             pictureBox1 = new PictureBox();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
@@ -75,8 +71,8 @@
             iconButton7 = new FontAwesome.Sharp.IconButton();
             guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(components);
             panel7 = new Panel();
-            CloseButton = new Guna.UI2.WinForms.Guna2Button();
-            minimizeButton = new Guna.UI2.WinForms.Guna2Button();
+            button1 = new Button();
+            button3 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             guna2Panel1.SuspendLayout();
             panel20.SuspendLayout();
@@ -100,8 +96,8 @@
             label4.AutoSize = true;
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Tahoma", 12.75F);
-            label4.ForeColor = SystemColors.ButtonFace;
-            label4.Location = new Point(3, 354);
+            label4.ForeColor = SystemColors.ActiveCaptionText;
+            label4.Location = new Point(11, 354);
             label4.Name = "label4";
             label4.Size = new Size(54, 21);
             label4.TabIndex = 3;
@@ -120,7 +116,7 @@
             // 
             // guna2Panel1
             // 
-            guna2Panel1.BackColor = SystemColors.ControlDarkDark;
+            guna2Panel1.BackColor = Color.Gainsboro;
             guna2Panel1.BorderColor = Color.White;
             guna2Panel1.Controls.Add(panel20);
             guna2Panel1.Controls.Add(panel10);
@@ -130,7 +126,7 @@
             guna2Panel1.Controls.Add(panel12);
             guna2Panel1.Controls.Add(panel14);
             guna2Panel1.CustomizableEdges = customizableEdges1;
-            guna2Panel1.FillColor = Color.FromArgb(74, 74, 74);
+            guna2Panel1.FillColor = Color.WhiteSmoke;
             guna2Panel1.Location = new Point(0, 31);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges2;
@@ -150,7 +146,7 @@
             // 
             // panel21
             // 
-            panel21.BackColor = Color.FromArgb(48, 25, 61);
+            panel21.BackColor = Color.FromArgb(100, 70, 117);
             panel21.BorderStyle = BorderStyle.FixedSingle;
             panel21.ForeColor = Color.FromArgb(48, 25, 61);
             panel21.Location = new Point(0, 0);
@@ -160,12 +156,12 @@
             // 
             // iconButton9
             // 
-            iconButton9.BackColor = Color.FromArgb(74, 74, 74);
+            iconButton9.BackColor = SystemColors.WindowFrame;
             iconButton9.FlatAppearance.BorderColor = Color.DarkGray;
             iconButton9.FlatAppearance.BorderSize = 0;
             iconButton9.FlatStyle = FlatStyle.Flat;
             iconButton9.Font = new Font("Tahoma", 12F);
-            iconButton9.ForeColor = Color.WhiteSmoke;
+            iconButton9.ForeColor = SystemColors.ButtonHighlight;
             iconButton9.IconChar = FontAwesome.Sharp.IconChar.LayerGroup;
             iconButton9.IconColor = Color.Gainsboro;
             iconButton9.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -195,7 +191,7 @@
             // 
             // panel11
             // 
-            panel11.BackColor = Color.FromArgb(48, 25, 61);
+            panel11.BackColor = Color.FromArgb(100, 70, 117);
             panel11.BorderStyle = BorderStyle.FixedSingle;
             panel11.Controls.Add(panel18);
             panel11.ForeColor = Color.FromArgb(48, 25, 61);
@@ -250,12 +246,12 @@
             // 
             // iconButton4
             // 
-            iconButton4.BackColor = Color.FromArgb(74, 74, 74);
+            iconButton4.BackColor = SystemColors.WindowFrame;
             iconButton4.FlatAppearance.BorderColor = Color.DarkGray;
             iconButton4.FlatAppearance.BorderSize = 0;
             iconButton4.FlatStyle = FlatStyle.Flat;
             iconButton4.Font = new Font("Tahoma", 12F);
-            iconButton4.ForeColor = SystemColors.ButtonFace;
+            iconButton4.ForeColor = SystemColors.ButtonHighlight;
             iconButton4.IconChar = FontAwesome.Sharp.IconChar.Envelope;
             iconButton4.IconColor = Color.Gainsboro;
             iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -284,7 +280,7 @@
             // 
             // panel4
             // 
-            panel4.BackColor = Color.FromArgb(48, 25, 61);
+            panel4.BackColor = Color.FromArgb(100, 70, 117);
             panel4.BackgroundImageLayout = ImageLayout.None;
             panel4.BorderStyle = BorderStyle.FixedSingle;
             panel4.ForeColor = Color.FromArgb(48, 25, 61);
@@ -295,12 +291,12 @@
             // 
             // iconButton1
             // 
-            iconButton1.BackColor = Color.FromArgb(74, 74, 74);
+            iconButton1.BackColor = SystemColors.WindowFrame;
             iconButton1.FlatAppearance.BorderColor = Color.DarkGray;
             iconButton1.FlatAppearance.BorderSize = 0;
             iconButton1.FlatStyle = FlatStyle.Flat;
             iconButton1.Font = new Font("Tahoma", 12F);
-            iconButton1.ForeColor = Color.WhiteSmoke;
+            iconButton1.ForeColor = SystemColors.ButtonHighlight;
             iconButton1.IconChar = FontAwesome.Sharp.IconChar.Key;
             iconButton1.IconColor = Color.Gainsboro;
             iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -329,7 +325,7 @@
             // 
             // panel6
             // 
-            panel6.BackColor = Color.FromArgb(48, 25, 61);
+            panel6.BackColor = Color.FromArgb(100, 70, 117);
             panel6.BorderStyle = BorderStyle.FixedSingle;
             panel6.ForeColor = Color.FromArgb(48, 25, 61);
             panel6.Location = new Point(0, 0);
@@ -339,12 +335,12 @@
             // 
             // iconButton2
             // 
-            iconButton2.BackColor = Color.FromArgb(74, 74, 74);
+            iconButton2.BackColor = SystemColors.WindowFrame;
             iconButton2.FlatAppearance.BorderColor = Color.DarkGray;
             iconButton2.FlatAppearance.BorderSize = 0;
             iconButton2.FlatStyle = FlatStyle.Flat;
             iconButton2.Font = new Font("Tahoma", 12F);
-            iconButton2.ForeColor = Color.WhiteSmoke;
+            iconButton2.ForeColor = SystemColors.ButtonHighlight;
             iconButton2.IconChar = FontAwesome.Sharp.IconChar.LayerGroup;
             iconButton2.IconColor = Color.Gainsboro;
             iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -384,7 +380,7 @@
             // 
             // panel9
             // 
-            panel9.BackColor = Color.FromArgb(48, 25, 61);
+            panel9.BackColor = Color.FromArgb(100, 70, 117);
             panel9.BorderStyle = BorderStyle.FixedSingle;
             panel9.ForeColor = Color.FromArgb(48, 25, 61);
             panel9.Location = new Point(0, 0);
@@ -427,12 +423,12 @@
             // 
             // button2
             // 
-            button2.BackColor = Color.FromArgb(74, 74, 74);
+            button2.BackColor = SystemColors.WindowFrame;
             button2.FlatAppearance.BorderColor = Color.DarkGray;
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Tahoma", 12F);
-            button2.ForeColor = Color.WhiteSmoke;
+            button2.ForeColor = SystemColors.ButtonHighlight;
             button2.IconChar = FontAwesome.Sharp.IconChar.User;
             button2.IconColor = Color.Gainsboro;
             button2.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -462,7 +458,7 @@
             // 
             // panel13
             // 
-            panel13.BackColor = Color.FromArgb(192, 0, 0);
+            panel13.BackColor = Color.FromArgb(142, 0, 0);
             panel13.ForeColor = Color.FromArgb(48, 25, 61);
             panel13.Location = new Point(-1, 0);
             panel13.Name = "panel13";
@@ -471,12 +467,12 @@
             // 
             // iconButton5
             // 
-            iconButton5.BackColor = Color.FromArgb(74, 74, 74);
+            iconButton5.BackColor = SystemColors.WindowFrame;
             iconButton5.FlatAppearance.BorderColor = Color.DarkGray;
             iconButton5.FlatAppearance.BorderSize = 0;
             iconButton5.FlatStyle = FlatStyle.Flat;
             iconButton5.Font = new Font("Tahoma", 12F);
-            iconButton5.ForeColor = Color.WhiteSmoke;
+            iconButton5.ForeColor = SystemColors.ButtonHighlight;
             iconButton5.IconChar = FontAwesome.Sharp.IconChar.BackwardStep;
             iconButton5.IconColor = Color.Gainsboro;
             iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -506,7 +502,7 @@
             // 
             // panel15
             // 
-            panel15.BackColor = Color.FromArgb(48, 25, 61);
+            panel15.BackColor = Color.FromArgb(100, 70, 117);
             panel15.BorderStyle = BorderStyle.FixedSingle;
             panel15.ForeColor = Color.FromArgb(48, 25, 61);
             panel15.Location = new Point(-1, 0);
@@ -516,12 +512,12 @@
             // 
             // iconButton6
             // 
-            iconButton6.BackColor = Color.FromArgb(74, 74, 74);
+            iconButton6.BackColor = SystemColors.WindowFrame;
             iconButton6.FlatAppearance.BorderColor = Color.DarkGray;
             iconButton6.FlatAppearance.BorderSize = 0;
             iconButton6.FlatStyle = FlatStyle.Flat;
             iconButton6.Font = new Font("Tahoma", 12F);
-            iconButton6.ForeColor = Color.WhiteSmoke;
+            iconButton6.ForeColor = SystemColors.ButtonHighlight;
             iconButton6.IconChar = FontAwesome.Sharp.IconChar.Box;
             iconButton6.IconColor = Color.Gainsboro;
             iconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -541,8 +537,8 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Tahoma", 12F);
-            label1.ForeColor = SystemColors.ButtonFace;
-            label1.Location = new Point(3, 375);
+            label1.ForeColor = SystemColors.ActiveCaptionText;
+            label1.Location = new Point(11, 375);
             label1.Name = "label1";
             label1.Size = new Size(51, 19);
             label1.TabIndex = 23;
@@ -550,17 +546,18 @@
             // 
             // guna2Panel2
             // 
+            guna2Panel2.BackColor = Color.FromArgb(0, 0, 0, 0);
             guna2Panel2.Controls.Add(panel16);
             guna2Panel2.Controls.Add(pictureBox1);
             guna2Panel2.Controls.Add(label1);
             guna2Panel2.Controls.Add(label4);
             guna2Panel2.CustomizableEdges = customizableEdges3;
-            guna2Panel2.FillColor = Color.FromArgb(74, 74, 74);
+            guna2Panel2.FillColor = Color.WhiteSmoke;
             guna2Panel2.Location = new Point(542, 31);
             guna2Panel2.Name = "guna2Panel2";
             guna2Panel2.ShadowDecoration.BorderRadius = 0;
             guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            guna2Panel2.Size = new Size(285, 543);
+            guna2Panel2.Size = new Size(285, 538);
             guna2Panel2.TabIndex = 14;
             // 
             // panel16
@@ -577,7 +574,7 @@
             // 
             // panel17
             // 
-            panel17.BackColor = Color.FromArgb(48, 25, 61);
+            panel17.BackColor = Color.FromArgb(100, 70, 117);
             panel17.BorderStyle = BorderStyle.FixedSingle;
             panel17.ForeColor = Color.FromArgb(48, 25, 61);
             panel17.Location = new Point(240, 0);
@@ -587,12 +584,12 @@
             // 
             // iconButton7
             // 
-            iconButton7.BackColor = Color.FromArgb(74, 74, 74);
+            iconButton7.BackColor = SystemColors.WindowFrame;
             iconButton7.FlatAppearance.BorderColor = Color.DarkGray;
             iconButton7.FlatAppearance.BorderSize = 0;
             iconButton7.FlatStyle = FlatStyle.Flat;
             iconButton7.Font = new Font("Tahoma", 12F);
-            iconButton7.ForeColor = Color.WhiteSmoke;
+            iconButton7.ForeColor = SystemColors.ButtonHighlight;
             iconButton7.IconChar = FontAwesome.Sharp.IconChar.Camera;
             iconButton7.IconColor = Color.Gainsboro;
             iconButton7.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -617,8 +614,9 @@
             // 
             // panel7
             // 
-            panel7.Controls.Add(CloseButton);
-            panel7.Controls.Add(minimizeButton);
+            panel7.BackColor = Color.WhiteSmoke;
+            panel7.Controls.Add(button1);
+            panel7.Controls.Add(button3);
             panel7.Dock = DockStyle.Top;
             panel7.Location = new Point(0, 0);
             panel7.Name = "panel7";
@@ -628,49 +626,37 @@
             panel7.MouseMove += panel7_MouseMove;
             panel7.MouseUp += panel7_MouseUp;
             // 
-            // CloseButton
+            // button1
             // 
-            CloseButton.BackgroundImage = (Image)resources.GetObject("CloseButton.BackgroundImage");
-            CloseButton.BackgroundImageLayout = ImageLayout.Stretch;
-            CloseButton.CustomizableEdges = customizableEdges5;
-            CloseButton.DisabledState.BorderColor = Color.DarkGray;
-            CloseButton.DisabledState.CustomBorderColor = Color.DarkGray;
-            CloseButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            CloseButton.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            CloseButton.FillColor = Color.Empty;
-            CloseButton.Font = new Font("Segoe UI", 9F);
-            CloseButton.ForeColor = Color.White;
-            CloseButton.Location = new Point(786, 2);
-            CloseButton.Name = "CloseButton";
-            CloseButton.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            CloseButton.Size = new Size(30, 30);
-            CloseButton.TabIndex = 17;
-            CloseButton.Click += CloseButton_Click;
+            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
+            button1.BackgroundImageLayout = ImageLayout.Stretch;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Location = new Point(749, 3);
+            button1.Name = "button1";
+            button1.Size = new Size(29, 29);
+            button1.TabIndex = 33;
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += minimizeButton_Click;
             // 
-            // minimizeButton
+            // button3
             // 
-            minimizeButton.BackgroundImage = (Image)resources.GetObject("minimizeButton.BackgroundImage");
-            minimizeButton.BackgroundImageLayout = ImageLayout.Stretch;
-            minimizeButton.CustomizableEdges = customizableEdges7;
-            minimizeButton.DisabledState.BorderColor = Color.DarkGray;
-            minimizeButton.DisabledState.CustomBorderColor = Color.DarkGray;
-            minimizeButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            minimizeButton.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            minimizeButton.FillColor = Color.Empty;
-            minimizeButton.Font = new Font("Segoe UI", 9F);
-            minimizeButton.ForeColor = Color.White;
-            minimizeButton.Location = new Point(750, 2);
-            minimizeButton.Name = "minimizeButton";
-            minimizeButton.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            minimizeButton.Size = new Size(30, 30);
-            minimizeButton.TabIndex = 18;
-            minimizeButton.Click += minimizeButton_Click;
+            button3.BackgroundImage = (Image)resources.GetObject("button3.BackgroundImage");
+            button3.BackgroundImageLayout = ImageLayout.Stretch;
+            button3.FlatAppearance.BorderSize = 0;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Location = new Point(784, 3);
+            button3.Name = "button3";
+            button3.Size = new Size(29, 29);
+            button3.TabIndex = 32;
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += CloseButton_Click;
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(74, 74, 74);
+            BackColor = SystemColors.WindowFrame;
             ClientSize = new Size(828, 571);
             Controls.Add(guna2Panel2);
             Controls.Add(guna2Panel1);
@@ -735,10 +721,10 @@
         private Panel panel18;
         private Panel panel19;
         private FontAwesome.Sharp.IconButton iconButton8;
-        private Guna.UI2.WinForms.Guna2Button minimizeButton;
-        private Guna.UI2.WinForms.Guna2Button CloseButton;
         private Panel panel20;
         private Panel panel21;
         private FontAwesome.Sharp.IconButton iconButton9;
+        private Button button1;
+        private Button button3;
     }
 }

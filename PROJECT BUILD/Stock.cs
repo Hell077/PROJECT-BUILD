@@ -166,6 +166,5 @@ namespace PROJECT_BUILD
                 MessageBox.Show("Произошла ошибка при экспорте данных в Excel: " + ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
     }
 }

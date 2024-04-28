@@ -5,7 +5,9 @@ namespace PROJECT_BUILD
     public partial class OrdersForm : Form
     {
         Database database = new Database();
-        
+        bool dragging = false;
+        Point dragCursorPoint;
+        Point dragFormPoint;
 
         public OrdersForm()
         {
@@ -84,7 +86,7 @@ namespace PROJECT_BUILD
                     MessageBox.Show("Invalid type selected.");
                 }
 
-                decimal totalPrice  = square * 690000 + Price;
+                decimal totalPrice = square * 690000 + Price;
                 totalPriceTextBox.Text = $" {totalPrice}.00 ₸";
             }
             else
@@ -92,9 +94,36 @@ namespace PROJECT_BUILD
                 MessageBox.Show("Ошибка");
             }
         }
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (dragging)
+            {
+                Point dif = Point.Subtract(System.Windows.Forms.Cursor.Position, new Size(dragCursorPoint));
+                this.Location = Point.Add(dragFormPoint, new Size(dif));
+            }
+        }
 
+        private void panel1_MouseUp(object sender, MouseEventArgs e)
+        {
+            dragging = false;
+        }
 
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            dragging = true;
+            dragCursorPoint = System.Windows.Forms.Cursor.Position;
+            dragFormPoint = this.Location;
+        }
 
+        private void CloseButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void minimizeButton_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
 
 
         private void button2_Click(object sender, EventArgs e)

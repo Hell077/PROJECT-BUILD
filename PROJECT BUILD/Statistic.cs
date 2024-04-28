@@ -14,7 +14,7 @@ namespace PROJECT_BUILD
 {
     public partial class Statistic : Form
     {
-        
+
         Database database = new Database();
         bool dragging = false;
         Point dragCursorPoint;
@@ -113,6 +113,5 @@ namespace PROJECT_BUILD
             dragCursorPoint = System.Windows.Forms.Cursor.Position;
             dragFormPoint = this.Location;
         }
-
     }
 }

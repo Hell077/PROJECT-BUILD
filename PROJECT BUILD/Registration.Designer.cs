@@ -30,17 +30,19 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registration));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            groupBox3 = new GroupBox();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             linkLabel1 = new LinkLabel();
             Password3 = new TextBox();
             Eye = new Button();
             Password2 = new TextBox();
             loginbox = new TextBox();
-            registration_button = new Button();
             label3 = new Label();
             label2 = new Label();
             Eye_slash = new Button();
@@ -48,34 +50,22 @@
             panel1 = new Panel();
             CloseButton = new Guna.UI2.WinForms.Guna2Button();
             minimizeButton = new Guna.UI2.WinForms.Guna2Button();
-            groupBox3.SuspendLayout();
+            guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            label1 = new Label();
+            button1 = new Button();
+            button2 = new Button();
             panel1.SuspendLayout();
+            guna2GroupBox1.SuspendLayout();
             SuspendLayout();
-            // 
-            // groupBox3
-            // 
-            groupBox3.BackColor = Color.FromArgb(90, 90, 90);
-            groupBox3.Controls.Add(linkLabel1);
-            groupBox3.Controls.Add(Password3);
-            groupBox3.Controls.Add(Eye);
-            groupBox3.Controls.Add(Password2);
-            groupBox3.Controls.Add(loginbox);
-            groupBox3.Controls.Add(registration_button);
-            groupBox3.Controls.Add(label3);
-            groupBox3.Controls.Add(label2);
-            groupBox3.Controls.Add(Eye_slash);
-            groupBox3.Location = new Point(31, 84);
-            groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(486, 341);
-            groupBox3.TabIndex = 8;
-            groupBox3.TabStop = false;
             // 
             // linkLabel1
             // 
             linkLabel1.AutoSize = true;
+            linkLabel1.BackColor = Color.Transparent;
             linkLabel1.Font = new Font("Segoe UI Historic", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             linkLabel1.LinkColor = Color.FromArgb(128, 128, 255);
-            linkLabel1.Location = new Point(192, 227);
+            linkLabel1.Location = new Point(155, 302);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(146, 25);
             linkLabel1.TabIndex = 10;
@@ -86,7 +76,7 @@
             // Password3
             // 
             Password3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            Password3.Location = new Point(158, 110);
+            Password3.Location = new Point(115, 169);
             Password3.Name = "Password3";
             Password3.Size = new Size(222, 29);
             Password3.TabIndex = 9;
@@ -97,7 +87,7 @@
             Eye.BackgroundImage = (Image)resources.GetObject("Eye.BackgroundImage");
             Eye.BackgroundImageLayout = ImageLayout.Stretch;
             Eye.Image = (Image)resources.GetObject("Eye.Image");
-            Eye.Location = new Point(386, 90);
+            Eye.Location = new Point(343, 189);
             Eye.Name = "Eye";
             Eye.Size = new Size(29, 29);
             Eye.TabIndex = 7;
@@ -107,7 +97,7 @@
             // Password2
             // 
             Password2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            Password2.Location = new Point(158, 75);
+            Password2.Location = new Point(115, 204);
             Password2.Name = "Password2";
             Password2.Size = new Size(222, 29);
             Password2.TabIndex = 6;
@@ -115,27 +105,18 @@
             // loginbox
             // 
             loginbox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            loginbox.Location = new Point(158, 34);
+            loginbox.Location = new Point(115, 134);
             loginbox.Name = "loginbox";
             loginbox.Size = new Size(222, 29);
             loginbox.TabIndex = 5;
             // 
-            // registration_button
-            // 
-            registration_button.Font = new Font("Tahoma", 14.25F, FontStyle.Bold);
-            registration_button.Location = new Point(158, 154);
-            registration_button.Name = "registration_button";
-            registration_button.Size = new Size(222, 60);
-            registration_button.TabIndex = 1;
-            registration_button.Text = "Зарегистрироваться ";
-            registration_button.UseVisualStyleBackColor = true;
-            registration_button.Click += registration_button_Click;
-            // 
             // label3
             // 
             label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
             label3.Font = new Font("Tahoma", 13.25F, FontStyle.Bold);
-            label3.Location = new Point(58, 77);
+            label3.ForeColor = Color.Black;
+            label3.Location = new Point(30, 190);
             label3.Name = "label3";
             label3.Size = new Size(79, 22);
             label3.TabIndex = 3;
@@ -145,8 +126,10 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
             label2.Font = new Font("Tahoma", 13.25F, FontStyle.Bold);
-            label2.Location = new Point(58, 34);
+            label2.ForeColor = Color.Black;
+            label2.Location = new Point(41, 136);
             label2.Name = "label2";
             label2.Size = new Size(68, 22);
             label2.TabIndex = 1;
@@ -157,7 +140,7 @@
             // 
             Eye_slash.BackgroundImage = (Image)resources.GetObject("Eye_slash.BackgroundImage");
             Eye_slash.BackgroundImageLayout = ImageLayout.Stretch;
-            Eye_slash.Location = new Point(386, 90);
+            Eye_slash.Location = new Point(343, 189);
             Eye_slash.Name = "Eye_slash";
             Eye_slash.Size = new Size(29, 29);
             Eye_slash.TabIndex = 8;
@@ -173,12 +156,15 @@
             // 
             // panel1
             // 
+            panel1.BackColor = Color.WhiteSmoke;
+            panel1.Controls.Add(button2);
+            panel1.Controls.Add(button1);
             panel1.Controls.Add(CloseButton);
             panel1.Controls.Add(minimizeButton);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(555, 35);
+            panel1.Size = new Size(447, 35);
             panel1.TabIndex = 9;
             panel1.MouseDown += panel1_MouseDown;
             panel1.MouseMove += panel1_MouseMove;
@@ -188,7 +174,7 @@
             // 
             CloseButton.BackgroundImage = (Image)resources.GetObject("CloseButton.BackgroundImage");
             CloseButton.BackgroundImageLayout = ImageLayout.Stretch;
-            CloseButton.CustomizableEdges = customizableEdges9;
+            CloseButton.CustomizableEdges = customizableEdges5;
             CloseButton.DisabledState.BorderColor = Color.DarkGray;
             CloseButton.DisabledState.CustomBorderColor = Color.DarkGray;
             CloseButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -198,7 +184,7 @@
             CloseButton.ForeColor = Color.White;
             CloseButton.Location = new Point(502, 3);
             CloseButton.Name = "CloseButton";
-            CloseButton.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            CloseButton.ShadowDecoration.CustomizableEdges = customizableEdges6;
             CloseButton.Size = new Size(30, 30);
             CloseButton.TabIndex = 23;
             CloseButton.Click += CloseButton_Click;
@@ -207,7 +193,7 @@
             // 
             minimizeButton.BackgroundImage = (Image)resources.GetObject("minimizeButton.BackgroundImage");
             minimizeButton.BackgroundImageLayout = ImageLayout.Stretch;
-            minimizeButton.CustomizableEdges = customizableEdges11;
+            minimizeButton.CustomizableEdges = customizableEdges7;
             minimizeButton.DisabledState.BorderColor = Color.DarkGray;
             minimizeButton.DisabledState.CustomBorderColor = Color.DarkGray;
             minimizeButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -217,36 +203,115 @@
             minimizeButton.ForeColor = Color.White;
             minimizeButton.Location = new Point(466, 3);
             minimizeButton.Name = "minimizeButton";
-            minimizeButton.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            minimizeButton.ShadowDecoration.CustomizableEdges = customizableEdges8;
             minimizeButton.Size = new Size(30, 30);
             minimizeButton.TabIndex = 22;
             minimizeButton.Click += minimizeButton_Click;
+            // 
+            // guna2GroupBox1
+            // 
+            guna2GroupBox1.BorderRadius = 20;
+            guna2GroupBox1.Controls.Add(label1);
+            guna2GroupBox1.Controls.Add(guna2Button1);
+            guna2GroupBox1.Controls.Add(label2);
+            guna2GroupBox1.Controls.Add(loginbox);
+            guna2GroupBox1.Controls.Add(linkLabel1);
+            guna2GroupBox1.Controls.Add(Eye);
+            guna2GroupBox1.Controls.Add(Eye_slash);
+            guna2GroupBox1.Controls.Add(label3);
+            guna2GroupBox1.Controls.Add(Password3);
+            guna2GroupBox1.Controls.Add(Password2);
+            guna2GroupBox1.CustomizableEdges = customizableEdges3;
+            guna2GroupBox1.Font = new Font("Segoe UI", 9F);
+            guna2GroupBox1.ForeColor = Color.FromArgb(125, 137, 149);
+            guna2GroupBox1.Location = new Point(12, 41);
+            guna2GroupBox1.Name = "guna2GroupBox1";
+            guna2GroupBox1.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            guna2GroupBox1.Size = new Size(423, 442);
+            guna2GroupBox1.TabIndex = 11;
+            // 
+            // guna2Button1
+            // 
+            guna2Button1.BackColor = Color.Transparent;
+            guna2Button1.BorderColor = Color.Transparent;
+            guna2Button1.BorderRadius = 10;
+            guna2Button1.CustomizableEdges = customizableEdges1;
+            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button1.FillColor = Color.Silver;
+            guna2Button1.Font = new Font("Tahoma", 13.25F, FontStyle.Bold);
+            guna2Button1.ForeColor = Color.Black;
+            guna2Button1.Location = new Point(115, 239);
+            guna2Button1.Name = "guna2Button1";
+            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            guna2Button1.Size = new Size(222, 60);
+            guna2Button1.TabIndex = 11;
+            guna2Button1.Text = "Зарегистрироваться";
+            guna2Button1.Click += registration_button_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Tahoma", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            label1.ForeColor = Color.Black;
+            label1.Location = new Point(115, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(193, 33);
+            label1.TabIndex = 12;
+            label1.Text = "Регистрация";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // button1
+            // 
+            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
+            button1.BackgroundImageLayout = ImageLayout.Stretch;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Location = new Point(406, 3);
+            button1.Name = "button1";
+            button1.Size = new Size(29, 29);
+            button1.TabIndex = 28;
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += CloseButton_Click;
+            // 
+            // button2
+            // 
+            button2.BackgroundImage = (Image)resources.GetObject("button2.BackgroundImage");
+            button2.BackgroundImageLayout = ImageLayout.Stretch;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Location = new Point(371, 3);
+            button2.Name = "button2";
+            button2.Size = new Size(29, 29);
+            button2.TabIndex = 29;
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += minimizeButton_Click;
             // 
             // Registration
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(80, 80, 80);
-            ClientSize = new Size(555, 585);
+            BackColor = Color.FromArgb(224, 224, 224);
+            ClientSize = new Size(447, 495);
+            Controls.Add(guna2GroupBox1);
             Controls.Add(panel1);
-            Controls.Add(groupBox3);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Registration";
             Text = "Form2";
-            groupBox3.ResumeLayout(false);
-            groupBox3.PerformLayout();
             panel1.ResumeLayout(false);
+            guna2GroupBox1.ResumeLayout(false);
+            guna2GroupBox1.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private GroupBox groupBox3;
         private TextBox Password3;
         private Button Eye;
         private TextBox Password2;
         private TextBox loginbox;
-        private Button registration_button;
         private Label label3;
         private Label label2;
         private Button Eye_slash;
@@ -255,5 +320,10 @@
         private Panel panel1;
         private Guna.UI2.WinForms.Guna2Button minimizeButton;
         private Guna.UI2.WinForms.Guna2Button CloseButton;
+        private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Label label1;
+        private Button button1;
+        private Button button2;
     }
 }

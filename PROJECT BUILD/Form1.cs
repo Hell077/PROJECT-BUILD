@@ -1,6 +1,5 @@
-using System.Data.SqlClient;
-using System.IO;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace PROJECT_BUILD
 
@@ -25,13 +24,6 @@ namespace PROJECT_BUILD
             this.FormBorderStyle = FormBorderStyle.None;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Stock stock = new Stock();
-            stock.Show();
-
-        }
-
         private void Eye_Click(object sender, EventArgs e)
         {
             Eye.Visible = false;
@@ -49,8 +41,7 @@ namespace PROJECT_BUILD
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Registration registration = new Registration();
-            registration.Show();
-            Hide();
+            registration.ShowDialog();
         }
 
         private void authorization_button_Click(object sender, EventArgs e)
@@ -97,11 +88,6 @@ namespace PROJECT_BUILD
         private void minimizeButton_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void panel1_MouseDown_1(object sender, MouseEventArgs e)
