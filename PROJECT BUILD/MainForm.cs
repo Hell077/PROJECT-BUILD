@@ -1,5 +1,4 @@
-﻿using Guna.UI2.WinForms;
-using System.Data.SqlClient;
+﻿using System.Data.SqlClient;
 
 namespace PROJECT_BUILD
 {
@@ -54,6 +53,7 @@ namespace PROJECT_BUILD
                 panel10.Visible = false;
                 panel18.Visible = false;
                 panel20.Visible = false;
+                panel24.Visible = false;
             }
             if (access == "Manager")
             {
@@ -61,15 +61,16 @@ namespace PROJECT_BUILD
                 panel18.Visible = false;
                 panel3.Visible = false;
                 panel20.Visible = false;
+                panel24.Visible = false;
             }
             if (access == "User")
             {
+                panel22.Visible = false;
                 panel14.Visible = false;
                 panel5.Visible = false;
                 panel3.Visible = false;
                 panel1.Visible = false;
             }
-
         }
         private void LoadImageOnStartup(string loginUser)
         {
@@ -97,7 +98,7 @@ namespace PROJECT_BUILD
 
         private void button6_Click(object sender, EventArgs e)
         {
-            OrdersForm ordersForm = new OrdersForm();
+            OrdersForm ordersForm = new OrdersForm(label4.Text);
             ordersForm.ShowDialog();
         }
 
@@ -190,6 +191,19 @@ namespace PROJECT_BUILD
         private void panel7_MouseUp(object sender, MouseEventArgs e)
         {
             dragging = false;
+        }
+
+        private void iconButton10_Click(object sender, EventArgs e)
+        {
+            salaryTaxes salaryTaxes = new salaryTaxes();
+            salaryTaxes.ShowDialog();
+        }
+
+        private void iconButton12_Click(object sender, EventArgs e)
+        {
+            string loginuser = label4.Text;
+            OrderStatusUser orderStatusUser = new OrderStatusUser(loginuser);
+            orderStatusUser.ShowDialog();
         }
     }
 }

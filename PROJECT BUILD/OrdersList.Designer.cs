@@ -30,8 +30,10 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrdersList));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             label4 = new Label();
             panel1 = new Panel();
             button2 = new Button();
@@ -40,6 +42,8 @@
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             dataGridView1 = new DataGridView();
             panel2 = new Panel();
+            comboBox1 = new ComboBox();
+            guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel2.SuspendLayout();
@@ -50,7 +54,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Tahoma", 21.75F);
             label4.ForeColor = SystemColors.ControlText;
-            label4.Location = new Point(230, 0);
+            label4.Location = new Point(224, 3);
             label4.Name = "label4";
             label4.Size = new Size(241, 35);
             label4.TabIndex = 12;
@@ -110,7 +114,7 @@
             // guna2Button1
             // 
             guna2Button1.BorderRadius = 10;
-            guna2Button1.CustomizableEdges = customizableEdges1;
+            guna2Button1.CustomizableEdges = customizableEdges7;
             guna2Button1.DisabledState.BorderColor = Color.DarkGray;
             guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -120,7 +124,7 @@
             guna2Button1.ForeColor = Color.Black;
             guna2Button1.Location = new Point(12, 494);
             guna2Button1.Name = "guna2Button1";
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges8;
             guna2Button1.Size = new Size(159, 82);
             guna2Button1.TabIndex = 16;
             guna2Button1.Text = "Удалить выбранный заказ";
@@ -140,6 +144,8 @@
             // panel2
             // 
             panel2.BackColor = Color.WhiteSmoke;
+            panel2.Controls.Add(comboBox1);
+            panel2.Controls.Add(guna2Button2);
             panel2.Controls.Add(guna2Button1);
             panel2.Dock = DockStyle.Left;
             panel2.Location = new Point(0, 39);
@@ -149,6 +155,34 @@
             panel2.MouseDown += panel1_MouseDown;
             panel2.MouseMove += panel1_MouseMove;
             panel2.MouseUp += panel1_MouseUp;
+            // 
+            // comboBox1
+            // 
+            comboBox1.AutoCompleteCustomSource.AddRange(new string[] { "Активен", "Завершен", "На рассмотрении " });
+            comboBox1.Items.AddRange(new object[] { "Активный ", "Завершенный ", "На рассмотрении" });
+            comboBox1.Location = new Point(12, 445);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(159, 23);
+            comboBox1.TabIndex = 18;
+            // 
+            // guna2Button2
+            // 
+            guna2Button2.BorderRadius = 10;
+            guna2Button2.CustomizableEdges = customizableEdges5;
+            guna2Button2.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button2.FillColor = Color.Silver;
+            guna2Button2.Font = new Font("Tahoma", 13F);
+            guna2Button2.ForeColor = Color.Black;
+            guna2Button2.Location = new Point(12, 389);
+            guna2Button2.Name = "guna2Button2";
+            guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            guna2Button2.Size = new Size(159, 50);
+            guna2Button2.TabIndex = 17;
+            guna2Button2.Text = "Поменять статус";
+            guna2Button2.Click += guna2Button2_Click;
             // 
             // OrdersList
             // 
@@ -180,5 +214,7 @@
         private Panel panel2;
         private Button button2;
         private Button button1;
+        private ComboBox comboBox1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button2;
     }
 }

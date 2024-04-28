@@ -35,6 +35,7 @@ namespace PROJECT_BUILD
         private void CreateColumns()
         {
             dataGridView1.Columns.Add("id", "ID");
+            dataGridView1.Columns.Add("GetStatus", "Статус выполнения");
             dataGridView1.Columns.Add("name", "Название проекта");
             dataGridView1.Columns.Add("description", "Описание проекта");
             dataGridView1.Columns.Add("customer_name", "Имя заказчика");
@@ -43,7 +44,7 @@ namespace PROJECT_BUILD
             dataGridView1.Columns.Add("square", "Площадь");
             dataGridView1.Columns.Add("status", "Ремонт");
             dataGridView1.Columns.Add("FinalPrice", "Расчетная_стоимость");
-            dataGridView1.Columns.Add("GetStatus", "Статус выполнения");
+            dataGridView1.Columns.Add("User", "User Login");
             dataGridView1.Columns.Add("IsNew", String.Empty);
         }
 
@@ -52,6 +53,7 @@ namespace PROJECT_BUILD
         {
             dgw.Rows.Add(
                 Convert.ToInt32(record[0]).ToString(),
+                record.GetString(10),
                 record.GetString(1),
                 record.GetString(2),
                 record.GetString(3),
@@ -148,6 +150,52 @@ namespace PROJECT_BUILD
         private void minimizeButton_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            string access = comboBox1.Text;
+            string newAccesValue = access;
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
+                selectedRow.Cells[1].Value = newAccesValue;
+                string id = selectedRow.Cells[0].Value.ToString(); ;
+
+                if (UpdateDataInDatabase(id, newAccesValue))
+                {
+                    MessageBox.Show("Данные успешно обновлены.");
+                }
+                else
+                {
+                    MessageBox.Show("Не удалось обновить данные в базе данных.");
+                }
+
+            }
+        }
+
+        private bool UpdateDataInDatabase(string id, string newAccessValue)
+        {
+            try
+            {
+                string updateQuery = "UPDATE Заказчик SET Статус = @newAccessValue WHERE ID_заказчика = @id";
+                using (SqlCommand command = new SqlCommand(updateQuery, database.GetConnection()))
+                {
+                    command.Parameters.AddWithValue("@newAccessValue", newAccessValue);
+                    command.Parameters.AddWithValue("@id", id);
+
+                    database.OpenConnection();
+                    int rowsAffected = command.ExecuteNonQuery();
+                    database.CloseConnection();
+
+                    return rowsAffected > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка при обновлении данных в базе данных: " + ex.Message);
+                return false;
+            }
         }
     }
 }

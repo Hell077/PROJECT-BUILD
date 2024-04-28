@@ -101,6 +101,9 @@
             label1.Size = new Size(579, 25);
             label1.TabIndex = 25;
             label1.Text = "Таблица расчетов налого-обложения сотрудников фирмы";
+            label1.MouseDown += panel1_MouseDown;
+            label1.MouseMove += panel1_MouseMove;
+            label1.MouseUp += panel1_MouseUp;
             // 
             // dataGridView1
             // 

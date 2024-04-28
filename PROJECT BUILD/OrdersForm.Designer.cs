@@ -55,6 +55,8 @@
             label10 = new Label();
             guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(components);
             guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            label12 = new Label();
+            label11 = new Label();
             panel1 = new Panel();
             panel2 = new Panel();
             button3 = new Button();
@@ -69,7 +71,7 @@
             // 
             textBox1.BackColor = SystemColors.ControlLight;
             textBox1.Font = new Font("Tahoma", 9.25F);
-            textBox1.Location = new Point(193, 67);
+            textBox1.Location = new Point(193, 98);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(243, 22);
             textBox1.TabIndex = 0;
@@ -78,7 +80,7 @@
             // 
             textBox2.BackColor = SystemColors.ControlLight;
             textBox2.Font = new Font("Tahoma", 9.25F);
-            textBox2.Location = new Point(193, 181);
+            textBox2.Location = new Point(193, 218);
             textBox2.Multiline = true;
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(243, 213);
@@ -90,7 +92,7 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Tahoma", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(142, 67);
+            label1.Location = new Point(142, 94);
             label1.Name = "label1";
             label1.Size = new Size(45, 23);
             label1.TabIndex = 2;
@@ -100,7 +102,7 @@
             // 
             textBox3.BackColor = SystemColors.ControlLight;
             textBox3.Font = new Font("Tahoma", 9.25F);
-            textBox3.Location = new Point(193, 91);
+            textBox3.Location = new Point(193, 126);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(243, 22);
             textBox3.TabIndex = 3;
@@ -109,7 +111,7 @@
             // 
             textBox4.BackColor = SystemColors.ControlLight;
             textBox4.Font = new Font("Tahoma", 9.25F);
-            textBox4.Location = new Point(193, 121);
+            textBox4.Location = new Point(193, 164);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(243, 22);
             textBox4.TabIndex = 4;
@@ -118,7 +120,7 @@
             // 
             textBox5.BackColor = SystemColors.ControlLight;
             textBox5.Font = new Font("Tahoma", 9.25F);
-            textBox5.Location = new Point(193, 151);
+            textBox5.Location = new Point(193, 192);
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(243, 22);
             textBox5.TabIndex = 5;
@@ -129,7 +131,7 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Tahoma", 14.25F);
             label2.ForeColor = Color.Black;
-            label2.Location = new Point(92, 91);
+            label2.Location = new Point(90, 126);
             label2.Name = "label2";
             label2.Size = new Size(95, 23);
             label2.TabIndex = 7;
@@ -141,7 +143,7 @@
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Tahoma", 14.25F);
             label3.ForeColor = Color.Black;
-            label3.Location = new Point(125, 121);
+            label3.Location = new Point(123, 160);
             label3.Name = "label3";
             label3.Size = new Size(62, 23);
             label3.TabIndex = 8;
@@ -153,7 +155,7 @@
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Tahoma", 14.25F);
             label5.ForeColor = Color.Black;
-            label5.Location = new Point(17, 150);
+            label5.Location = new Point(15, 191);
             label5.Name = "label5";
             label5.Size = new Size(170, 23);
             label5.TabIndex = 10;
@@ -177,7 +179,7 @@
             label6.BackColor = Color.Transparent;
             label6.Font = new Font("Tahoma", 14.25F);
             label6.ForeColor = Color.Black;
-            label6.Location = new Point(15, 181);
+            label6.Location = new Point(15, 214);
             label6.Name = "label6";
             label6.Size = new Size(172, 23);
             label6.TabIndex = 12;
@@ -187,7 +189,7 @@
             // 
             button1.BackColor = SystemColors.ControlLight;
             button1.Font = new Font("Tahoma", 14.25F);
-            button1.Location = new Point(193, 474);
+            button1.Location = new Point(193, 508);
             button1.Name = "button1";
             button1.Size = new Size(243, 64);
             button1.TabIndex = 13;
@@ -201,7 +203,7 @@
             label7.BackColor = Color.Transparent;
             label7.Font = new Font("Tahoma", 14.25F);
             label7.ForeColor = Color.Black;
-            label7.Location = new Point(30, 400);
+            label7.Location = new Point(39, 441);
             label7.Name = "label7";
             label7.Size = new Size(148, 23);
             label7.TabIndex = 15;
@@ -210,7 +212,7 @@
             // maskedTextBox1
             // 
             maskedTextBox1.BackColor = SystemColors.ControlLight;
-            maskedTextBox1.Location = new Point(193, 400);
+            maskedTextBox1.Location = new Point(193, 441);
             maskedTextBox1.Mask = "00000";
             maskedTextBox1.Name = "maskedTextBox1";
             maskedTextBox1.Size = new Size(243, 23);
@@ -222,7 +224,7 @@
             comboBox1.BackColor = SystemColors.ControlLight;
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "Обычный", "Средний", "Элитный" });
-            comboBox1.Location = new Point(193, 431);
+            comboBox1.Location = new Point(193, 479);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(243, 23);
             comboBox1.TabIndex = 17;
@@ -233,7 +235,7 @@
             label8.BackColor = Color.Transparent;
             label8.Font = new Font("Tahoma", 14.25F);
             label8.ForeColor = Color.Black;
-            label8.Location = new Point(25, 431);
+            label8.Location = new Point(25, 479);
             label8.Name = "label8";
             label8.Size = new Size(162, 23);
             label8.TabIndex = 18;
@@ -256,7 +258,7 @@
             groupBox1.Controls.Add(button2);
             groupBox1.Controls.Add(label10);
             groupBox1.Controls.Add(label9);
-            groupBox1.Location = new Point(442, 67);
+            groupBox1.Location = new Point(442, 94);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(249, 198);
             groupBox1.TabIndex = 20;
@@ -303,6 +305,8 @@
             // guna2GroupBox1
             // 
             guna2GroupBox1.BorderRadius = 20;
+            guna2GroupBox1.Controls.Add(label12);
+            guna2GroupBox1.Controls.Add(label11);
             guna2GroupBox1.Controls.Add(label4);
             guna2GroupBox1.Controls.Add(groupBox1);
             guna2GroupBox1.Controls.Add(textBox1);
@@ -326,9 +330,32 @@
             guna2GroupBox1.Location = new Point(11, 46);
             guna2GroupBox1.Name = "guna2GroupBox1";
             guna2GroupBox1.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2GroupBox1.Size = new Size(719, 549);
+            guna2GroupBox1.Size = new Size(719, 587);
             guna2GroupBox1.TabIndex = 21;
-            guna2GroupBox1.Text = "guna2GroupBox1";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.BackColor = Color.Transparent;
+            label12.Font = new Font("Tahoma", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            label12.ForeColor = Color.Black;
+            label12.Location = new Point(193, 49);
+            label12.Name = "label12";
+            label12.Size = new Size(28, 23);
+            label12.TabIndex = 22;
+            label12.Text = "...";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.BackColor = Color.Transparent;
+            label11.Font = new Font("Tahoma", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            label11.ForeColor = Color.Black;
+            label11.Location = new Point(3, 49);
+            label11.Name = "label11";
+            label11.Size = new Size(172, 23);
+            label11.TabIndex = 21;
+            label11.Text = "Имя пользователя";
             // 
             // panel1
             // 
@@ -384,8 +411,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.WindowFrame;
-            ClientSize = new Size(740, 604);
+            BackColor = SystemColors.ControlLightLight;
+            ClientSize = new Size(740, 645);
             Controls.Add(panel1);
             Controls.Add(guna2GroupBox1);
             Font = new Font("Tahoma", 10F);
@@ -431,5 +458,7 @@
         private Panel panel2;
         private Button button3;
         private Button button4;
+        private Label label11;
+        private Label label12;
     }
 }

@@ -9,12 +9,13 @@ namespace PROJECT_BUILD
         Point dragCursorPoint;
         Point dragFormPoint;
 
-        public OrdersForm()
+        public OrdersForm(string loginUser)
         {
             InitializeComponent();
-            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = FormBorderStyle.None;
             this.MaximizeBox = false;
             StartPosition = FormStartPosition.CenterScreen;
+            label12.Text =loginUser;
         }
 
         private void OrdersForm_Load(object sender, EventArgs e)
@@ -31,12 +32,13 @@ namespace PROJECT_BUILD
             string orderName = textBox5.Text;
             string order = textBox2.Text;
             string Sqare = maskedTextBox1.Text;
-            string status = comboBox1.Text;
+            string repair = comboBox1.Text;
             string totalPrice = totalPriceTextBox.Text;
+            string userlogin = label12.Text;
+            string status = "Активен";
 
-            string queryString = $"INSERT INTO Закзачик (Название_проекта, Описание, Имя_заказчика, Фамилия_заказчика, Почта_заказчика, Площадь, Ремонт, Расчетн" +
-                $"ая_стоимость) " +
-                                 $"VALUES ('{orderName}', '{order}', '{FirstName}', '{LastName}', '{email}' , '{Sqare}' ,'{status}' ,'{totalPrice}') ";
+            string queryString = $"INSERT INTO Заказчик (Название_проекта, Описание_проекта, Имя_заказчика, Фамилия_заказчика, Почта_заказчика, Площадь, Ремонт, Расчетная_стоимость, userLogin, статус) " +
+                           $"VALUES ('{orderName}', '{order}', '{FirstName}', '{LastName}', '{email}', '{Sqare}', '{repair}', '{totalPrice}', '{userlogin}' , '{status}');";
 
             SqlCommand command = new SqlCommand(queryString, database.GetConnection());
 
@@ -53,7 +55,7 @@ namespace PROJECT_BUILD
                 maskedTextBox1.Text = null;
                 comboBox1.Text = null;
                 totalPriceTextBox.Text = null;
-                OrdersForm ordersForm = new OrdersForm();
+                OrdersForm ordersForm = new OrdersForm("");
                 Close();
             }
             catch (SqlException ex)
