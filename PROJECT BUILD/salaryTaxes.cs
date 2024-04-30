@@ -23,15 +23,14 @@ namespace PROJECT_BUILD
 
         private void salaryTaxes_Load(object sender, EventArgs e)
         {
-            // Создаем объект подключения к базе данных
+        
             Database database = new Database();
 
-            // Открываем соединение
+    
             database.OpenConnection();
 
             try
             {
-                // Очищаем таблицу Зарплата перед загрузкой новых данных
                 string clearQuery = "TRUNCATE TABLE Зарплата";
                 SqlCommand clearCommand = new SqlCommand(clearQuery, database.GetConnection());
                 clearCommand.ExecuteNonQuery();
@@ -47,16 +46,16 @@ namespace PROJECT_BUILD
             }
             catch (Exception ex)
             {
-                // В случае ошибки выводим сообщение с текстом ошибки
+
                 MessageBox.Show("Ошибка при добавлении данных в таблицу Зарплата: " + ex.Message, "Ошибка");
             }
             finally
             {
-                // Закрываем соединение
+
                 database.CloseConnection();
             }
 
-            // После вставки данных обновляем DataGridView и устанавливаем его свойства
+
             CreateColumns();
             UpdateDataGridView(dataGridView1);
             dataGridView1.Dock = DockStyle.None;

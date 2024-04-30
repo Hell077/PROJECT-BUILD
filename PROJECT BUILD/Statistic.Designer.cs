@@ -41,6 +41,9 @@
             CloseButton = new Button();
             panel2 = new Panel();
             iconButton1 = new FontAwesome.Sharp.IconButton();
+            averageLabel = new Label();
+            minLabel = new Label();
+            maxLabel = new Label();
             ((System.ComponentModel.ISupportInitialize)chart1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
@@ -126,7 +129,7 @@
             panel2.Dock = DockStyle.Left;
             panel2.Location = new Point(0, 34);
             panel2.Name = "panel2";
-            panel2.Size = new Size(142, 609);
+            panel2.Size = new Size(142, 698);
             panel2.TabIndex = 24;
             // 
             // iconButton1
@@ -137,7 +140,7 @@
             iconButton1.IconColor = Color.Black;
             iconButton1.IconFont = FontAwesome.Sharp.IconFont.Solid;
             iconButton1.IconSize = 30;
-            iconButton1.Location = new Point(11, 555);
+            iconButton1.Location = new Point(11, 644);
             iconButton1.Name = "iconButton1";
             iconButton1.Size = new Size(128, 42);
             iconButton1.TabIndex = 26;
@@ -145,12 +148,45 @@
             iconButton1.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton1.UseVisualStyleBackColor = true;
             // 
+            // averageLabel
+            // 
+            averageLabel.AutoSize = true;
+            averageLabel.Font = new Font("Tahoma", 14F);
+            averageLabel.Location = new Point(175, 645);
+            averageLabel.Name = "averageLabel";
+            averageLabel.Size = new Size(59, 23);
+            averageLabel.TabIndex = 25;
+            averageLabel.Text = "label1";
+            // 
+            // minLabel
+            // 
+            minLabel.AutoSize = true;
+            minLabel.Font = new Font("Tahoma", 14F);
+            minLabel.Location = new Point(175, 677);
+            minLabel.Name = "minLabel";
+            minLabel.Size = new Size(59, 23);
+            minLabel.TabIndex = 26;
+            minLabel.Text = "label2";
+            // 
+            // maxLabel
+            // 
+            maxLabel.AutoSize = true;
+            maxLabel.Font = new Font("Tahoma", 14F);
+            maxLabel.Location = new Point(175, 705);
+            maxLabel.Name = "maxLabel";
+            maxLabel.Size = new Size(59, 23);
+            maxLabel.TabIndex = 27;
+            maxLabel.Text = "label3";
+            // 
             // Statistic
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.WindowFrame;
-            ClientSize = new Size(779, 643);
+            ClientSize = new Size(779, 732);
+            Controls.Add(maxLabel);
+            Controls.Add(minLabel);
+            Controls.Add(averageLabel);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(dataGridView1);
@@ -164,6 +200,7 @@
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -176,5 +213,8 @@
         private Button minimizeButton;
         private Button CloseButton;
         private FontAwesome.Sharp.IconButton iconButton1;
+        private Label maxLabel;
+        private Label minLabel;
+        private Label averageLabel;
     }
 }

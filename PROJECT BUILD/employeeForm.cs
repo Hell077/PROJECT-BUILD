@@ -277,9 +277,14 @@ namespace PROJECT_BUILD
             try
             {
                 database.OpenConnection();
-                SqlCommand command = new SqlCommand("DELETE FROM Сотрудники WHERE Id_сотрудника = @Id", connection);
+                SqlCommand command = new SqlCommand("DELETE FROM Сотрудники WHERE ID_сотрудника = @Id", connection);
                 command.Parameters.AddWithValue("@Id", id);
                 command.ExecuteNonQuery();
+
+                SqlCommand deleteSalaryCommand = new SqlCommand("DELETE FROM Зарплата WHERE ID_сотрудника = @Id", connection);
+                deleteSalaryCommand.Parameters.AddWithValue("@Id", id);
+                deleteSalaryCommand.ExecuteNonQuery();
+
                 MessageBox.Show("Запись удалена из базы данных.");
             }
             catch (Exception ex)
@@ -291,6 +296,7 @@ namespace PROJECT_BUILD
                 database.CloseConnection();
             }
         }
+
 
         private void RefreshDB_Click(object sender, EventArgs e)
         {

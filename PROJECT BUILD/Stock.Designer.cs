@@ -178,7 +178,7 @@
             panel2.Dock = DockStyle.Left;
             panel2.Location = new Point(0, 66);
             panel2.Name = "panel2";
-            panel2.Size = new Size(113, 606);
+            panel2.Size = new Size(113, 610);
             panel2.TabIndex = 10;
             panel2.MouseDown += panel1_MouseDown;
             panel2.MouseMove += panel1_MouseMove;

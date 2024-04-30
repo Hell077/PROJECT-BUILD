@@ -48,13 +48,13 @@
             Eye_slash = new Button();
             guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(components);
             panel1 = new Panel();
+            button2 = new Button();
+            button1 = new Button();
             CloseButton = new Guna.UI2.WinForms.Guna2Button();
             minimizeButton = new Guna.UI2.WinForms.Guna2Button();
             guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
-            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             label1 = new Label();
-            button1 = new Button();
-            button2 = new Button();
+            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             panel1.SuspendLayout();
             guna2GroupBox1.SuspendLayout();
             SuspendLayout();
@@ -170,6 +170,32 @@
             panel1.MouseMove += panel1_MouseMove;
             panel1.MouseUp += panel1_MouseUp;
             // 
+            // button2
+            // 
+            button2.BackgroundImage = (Image)resources.GetObject("button2.BackgroundImage");
+            button2.BackgroundImageLayout = ImageLayout.Stretch;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Location = new Point(371, 3);
+            button2.Name = "button2";
+            button2.Size = new Size(29, 29);
+            button2.TabIndex = 29;
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += minimizeButton_Click;
+            // 
+            // button1
+            // 
+            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
+            button1.BackgroundImageLayout = ImageLayout.Stretch;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Location = new Point(406, 3);
+            button1.Name = "button1";
+            button1.Size = new Size(29, 29);
+            button1.TabIndex = 28;
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += CloseButton_Click;
+            // 
             // CloseButton
             // 
             CloseButton.BackgroundImage = (Image)resources.GetObject("CloseButton.BackgroundImage");
@@ -230,6 +256,19 @@
             guna2GroupBox1.Size = new Size(423, 442);
             guna2GroupBox1.TabIndex = 11;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Tahoma", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            label1.ForeColor = Color.Black;
+            label1.Location = new Point(115, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(193, 33);
+            label1.TabIndex = 12;
+            label1.Text = "Регистрация";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // guna2Button1
             // 
             guna2Button1.BackColor = Color.Transparent;
@@ -250,45 +289,6 @@
             guna2Button1.TabIndex = 11;
             guna2Button1.Text = "Зарегистрироваться";
             guna2Button1.Click += registration_button_Click;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Tahoma", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            label1.ForeColor = Color.Black;
-            label1.Location = new Point(115, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(193, 33);
-            label1.TabIndex = 12;
-            label1.Text = "Регистрация";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // button1
-            // 
-            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
-            button1.BackgroundImageLayout = ImageLayout.Stretch;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Location = new Point(406, 3);
-            button1.Name = "button1";
-            button1.Size = new Size(29, 29);
-            button1.TabIndex = 28;
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += CloseButton_Click;
-            // 
-            // button2
-            // 
-            button2.BackgroundImage = (Image)resources.GetObject("button2.BackgroundImage");
-            button2.BackgroundImageLayout = ImageLayout.Stretch;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Location = new Point(371, 3);
-            button2.Name = "button2";
-            button2.Size = new Size(29, 29);
-            button2.TabIndex = 29;
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += minimizeButton_Click;
             // 
             // Registration
             // 

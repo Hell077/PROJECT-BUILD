@@ -72,16 +72,44 @@ namespace PROJECT_BUILD
             chart1.Series.Clear();
             chart1.Series.Add("Зарплата");
 
-            string quertString = $"select ID_сотрудника, Зарплата from dbo.Сотрудники";
-            SqlCommand command = new SqlCommand(quertString, database.GetConnection());
-            database.OpenConnection();
-            SqlDataReader reader = command.ExecuteReader();
-            while (reader.Read())
+           
+            foreach (DataGridViewRow row in dataGridView1.Rows)
             {
-                chart1.Series["Зарплата"].Points.AddXY(reader.GetInt32(0), reader.GetDecimal(1));
+                if (!row.IsNewRow) 
+                {
+                    int id = Convert.ToInt32(row.Cells["id"].Value);
+                    decimal salary = Convert.ToDecimal(row.Cells["Salary"].Value);
+                    chart1.Series["Зарплата"].Points.AddXY(id, salary);
+                }
             }
-            reader.Close();
+
+         
+            decimal sumSalary = 0;
+            decimal minSalary = decimal.MaxValue;
+            decimal maxSalary = decimal.MinValue;
+            int rowCount = 0;
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (!row.IsNewRow) 
+                {
+                    decimal salary = Convert.ToDecimal(row.Cells["Salary"].Value);
+                    sumSalary += salary;
+                    minSalary = Math.Min(minSalary, salary);
+                    maxSalary = Math.Max(maxSalary, salary);
+                    rowCount++;
+                }
+            }
+
+          
+            decimal averageSalary = rowCount > 0 ? sumSalary / rowCount : 0;
+
+       
+            averageLabel.Text = $"Средняя зарплата: {averageSalary:C}";
+            minLabel.Text = $"Минимальная зарплата: {minSalary:C}";
+            maxLabel.Text = $"Максимальная зарплата: {maxSalary:C}";
         }
+
 
         private void CloseButton_Click(object sender, EventArgs e)
         {
